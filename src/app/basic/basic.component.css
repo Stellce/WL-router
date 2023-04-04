@@ -1,0 +1,54 @@
+mat-card{
+  width: 882px;
+  height: 479px;
+  border-radius: 30px;
+  margin: 50px auto;
+  background-color: rgba(92, 0, 136, 1);
+  box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
+}
+
+.earth-div {
+  position: relative;
+  width: 102px;
+  height: 140px;
+  left: 56px;
+  top: 63px;
+  display: inline-block;
+}
+
+#x {
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+}
+
+.earth-div p {
+  left: 22px;
+  top: 123px;
+
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-size: 14pt;
+  color: white;
+  margin: 22px auto;
+  text-align: center;
+}
+
+.router-div {
+  position: relative;
+  width: 144px;
+  height: 106px;
+  left: 0;
+  top: -57px;
+}
+
+#outer {
+  width: 1024px;
+  height: 812px;
+  border-radius: 30px;
+  margin: 50px auto;
+  background-color: rgba(92, 0, 136, 1);
+  box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
+}

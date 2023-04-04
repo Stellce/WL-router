@@ -1,0 +1,44 @@
+button {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-size: 23px;
+  color: white;
+  width: 208px !important;
+  height: 61px !important;
+  margin: 0 35px;
+  align-self: center;
+  /*background-color: rgba(59, 0, 87, 1);*/
+}
+
+#inline-buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 260px;
+}
+
+#inline-buttons button {
+  margin: 5px;
+  flex-flow: column wrap;
+}
+
+mat-default {
+  background-color: rgba(59, 0, 87, 1);
+  color: white;
+}
+
+mat-selected {
+  background-color: rgba(111, 0, 163, 1);
+  color: white;
+}
+
+.headnav {
+  width: 1100px;
+  height: 130px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+
