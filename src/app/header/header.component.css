@@ -1,17 +1,32 @@
+.headnav {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto -60px auto;
+  /*width: 1100px;*/
+  /*height: 130px;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  z-index: 1;
+}
+
+.spacer {
+  width: 75px;
+}
+
 button {
   font-family: 'Inter', sans-serif;
   font-style: italic;
   font-size: 23px;
   color: white;
-  width: 208px !important;
+  width: 208px ;
   height: 61px !important;
-  margin: 0 35px;
+  margin: 0 35px !important;
   align-self: center;
-  /*background-color: rgba(59, 0, 87, 1);*/
 }
 
 #inline-buttons {
   display: flex;
+  gap: 10px;
   align-items: center;
   flex-direction: column;
   width: 260px;
@@ -22,23 +37,17 @@ button {
   flex-flow: column wrap;
 }
 
-mat-default {
-  background-color: rgba(59, 0, 87, 1);
-  color: white;
-}
+/*mat-default {*/
+/*  background-color: rgba(59, 0, 87, 1);*/
+/*  color: white;*/
+/*}*/
 
-mat-selected {
-  background-color: rgba(111, 0, 163, 1);
-  color: white;
-}
+/*mat-selected {*/
+/*  background-color: rgba(111, 0, 163, 1);*/
+/*  color: white;*/
+/*}*/
 
-.headnav {
-  width: 1100px;
-  height: 130px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
+
 
 
 

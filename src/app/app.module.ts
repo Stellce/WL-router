@@ -12,8 +12,10 @@ import {MatButtonModule} from "@angular/material/button";
 import {AdvancedComponent} from "./advanced/advanced.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
-import {ContentComponent} from "./content/content.component";
-import {BasicNavComponent} from "./basic/nav/basic.nav.component";
+import { InternetComponent } from './basic/side-nav/internet/internet.component';
+import { NetworkComponent } from './basic/side-nav/network/network.component';
+import { WirelessComponent } from './basic/side-nav/wireless/wireless.component';
+import { GuestNetworkComponent } from './basic/side-nav/guest-network/guest-network.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import {BasicNavComponent} from "./basic/nav/basic.nav.component";
     BasicComponent,
     QuickSetupComponent,
     AdvancedComponent,
-    ContentComponent,
-    BasicNavComponent,
+    InternetComponent,
+    NetworkComponent,
+    WirelessComponent,
+    GuestNetworkComponent,
   ],
   imports: [
     BrowserModule,

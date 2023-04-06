@@ -1,15 +1,51 @@
-<mat-card id="outer">
-  <mat-card>
-    <mat-card-content >
-      <div class="earth-div">
-        <img [src]="earthPath" alt="Internet" id="earth" />
-        <img [src]="xPath" alt="Disconnected" id="x" *ngIf="disconnected"/>
-        <p>Internet</p>
-      </div>
-      <div class="map-line"></div>
-      <div class="router-div">
-        <img [src]="routerPath" alt="Router" id="router" />
-      </div>
-    </mat-card-content>
-  </mat-card>
-</mat-card>
+<div class="outer-basic">
+  <div class="basic">
+    <div class="side-nav">
+      <button color="default"
+              mat-raised-button
+              routerLink="/basic/network"
+              routerLinkActive="mat-primary"
+              type="button">Network
+      </button>
+      <button color="default"
+              mat-raised-button
+              routerLink="/basic/internet"
+              routerLinkActive="mat-primary"
+              type="button">Internet
+      </button>
+      <button color="default"
+              mat-raised-button
+              routerLink="/basic/wireless"
+              routerLinkActive="mat-primary"
+              type="button">Wireless
+      </button>
+      <button color="default"
+              mat-raised-button
+              routerLink="/basic/guest-net"
+              routerLinkActive="mat-primary"
+              type="button">Guest Net
+      </button>
+    </div>
+    <router-outlet></router-outlet>
+<!--    <mat-card id="outer-card">-->
+<!--      <mat-card>-->
+<!--        <mat-card-content >-->
+<!--          <div class="earth-div">-->
+<!--            <img [src]="earthPath" alt="Internet" id="earth" />-->
+<!--            <img [src]="xPath" alt="Disconnected" id="x" *ngIf="disconnected"/>-->
+<!--            <p>Internet</p>-->
+<!--          </div>-->
+<!--          <div class="map-line"></div>-->
+<!--          <div class="router-div">-->
+<!--            <img [src]="routerPath" alt="Router" id="router" />-->
+<!--            <p>Router</p>-->
+<!--          </div>-->
+<!--          <div class="client-div">-->
+<!--            <img [src]="clientPath" alt="Client" id="client" />-->
+<!--            <p>Client</p>-->
+<!--          </div>-->
+<!--        </mat-card-content>-->
+<!--      </mat-card>-->
+<!--    </mat-card>-->
+  </div>
+</div>
