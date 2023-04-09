@@ -22,11 +22,10 @@ mat-card-content{
 }
 
 .earth-div {
-  position: relative;
   width: 102px;
   height: 140px;
-  display: inline-block;
-  margin: 56px;
+  position: relative;
+  margin: 50px;
 }
 
 .earth-div #x {
@@ -56,7 +55,7 @@ mat-card-content{
 .router-div {
   width: 144px;
   height: 106px;
-  margin: 56px 0;
+  margin: 30px 0;
 }
 
 .router-div p {
@@ -71,7 +70,7 @@ mat-card-content{
 .client-div {
   width: 144px;
   height: 106px;
-  margin: 56px 0;
+  margin: 30px 0;
 }
 
 .client-div p {

@@ -1,11 +1,6 @@
-.side-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 300px;
-  height: 364px;
-  margin-top: 75px;
-}
+
+
+/*.mat-primary*/
 
 .outer-basic {
   display: flex;
@@ -16,6 +11,15 @@
   display: flex;
   margin: 0 auto;
   flex-direction: row;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 364px;
+  margin-top: 75px;
 }
 
 button {
@@ -30,7 +34,7 @@ button {
   border-radius: 13px;
   /*background-color: rgba(59, 0, 87, 1);*/
 }
-/*               */
+/*
 #outer-card {
   width: 1024px;
   height: 812px;
@@ -59,7 +63,7 @@ mat-card-content{
   width: 102px;
   height: 140px;
   display: inline-block;
-  margin: 56px;
+  margin: 45px;
 }
 
 .earth-div #x {
@@ -88,7 +92,7 @@ mat-card-content{
 .router-div {
   width: 144px;
   height: 106px;
-  margin: 56px 0;
+  margin: 45px 0;
 }
 
 .router-div p {
@@ -103,7 +107,7 @@ mat-card-content{
 .client-div {
   width: 144px;
   height: 106px;
-  margin: 56px 0;
+  margin: 45px 0;
 }
 
 .client-div p {
@@ -114,3 +118,4 @@ mat-card-content{
   margin: 22px auto;
   text-align: center;
 }
+*/
