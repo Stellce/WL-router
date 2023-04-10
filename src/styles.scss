@@ -1,6 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@import 'theme.scss';
+
+@include mat.core();
+
+$primary: mat.define-palette($md-primary-palette);
+$accent: mat.define-palette($md-accent-palette);
+
+$theme: mat.define-dark-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+  )
+));
+@include mat.all-component-themes($theme);
+
 html, body { height: 100%; }
 
 body {

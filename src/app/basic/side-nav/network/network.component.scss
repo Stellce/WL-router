@@ -11,7 +11,7 @@ mat-card{
   width: 882px;
   height: 479px;
   border-radius: 30px;
-  margin: 50px auto;
+  margin: 75px auto;
   background-color: rgba(92, 0, 136, 1);
   box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
 }
@@ -25,7 +25,7 @@ mat-card-content{
   width: 102px;
   height: 140px;
   position: relative;
-  margin: 50px;
+  margin: 30px;
 }
 
 .earth-div #x {
@@ -46,8 +46,8 @@ mat-card-content{
 }
 
 .map-line{
-  width: 200px;
-  height: 2px;
+  width: 170px;
+  height: 3px;
   background-color: gray;
   margin-top: 100px;
 }
@@ -55,7 +55,7 @@ mat-card-content{
 .router-div {
   width: 144px;
   height: 106px;
-  margin: 30px 0;
+  margin: 30px;
 }
 
 .router-div p {
@@ -70,7 +70,7 @@ mat-card-content{
 .client-div {
   width: 144px;
   height: 106px;
-  margin: 30px 0;
+  margin: 30px;
 }
 
 .client-div p {
