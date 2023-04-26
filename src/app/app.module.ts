@@ -16,6 +16,8 @@ import { InternetComponent } from './basic/side-nav/internet/internet.component'
 import { NetworkComponent } from './basic/side-nav/network/network.component';
 import { WirelessComponent } from './basic/side-nav/wireless/wireless.component';
 import { GuestNetworkComponent } from './basic/side-nav/guest-network/guest-network.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { GuestNetworkComponent } from './basic/side-nav/guest-network/guest-netw
     RouterLink,
     RouterLinkActive,
     RouterOutlet,
+    MatSelectModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

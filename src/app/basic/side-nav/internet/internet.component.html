@@ -1,1 +1,33 @@
-<p>internet works!</p>
+<mat-card id="outer-card">
+  <mat-card>
+    <mat-card-content>
+      <div class="connectionType">
+        <p>WAN Connection Type:</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Choose an option</mat-label>
+          <mat-select>
+            <mat-option value="DynamicIP" selected>Dynamic IP</mat-option>
+            <mat-option value="StaticIP">Static IP</mat-option>
+            <mat-option value="PPPoE">PPPoE</mat-option>
+            <mat-option value="BigPondCable">BigPond Cable</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="accent" (click)="OnDetect()">Detect</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-content>
+      <ul>
+        <li class="propName" *ngFor="let element of dataSource">
+          <p>{{element.name}}</p> <p>{{element.value}}</p>
+        </li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" disabled>Renew</button>
+      <button mat-raised-button color="accent">Release</button>
+    </mat-card-actions>
+  </mat-card>
+  <button id="save" mat-raised-button color="accent">Save</button>
+</mat-card>
