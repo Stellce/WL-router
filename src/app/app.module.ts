@@ -18,6 +18,8 @@ import { WirelessComponent } from './basic/side-nav/wireless/wireless.component'
 import { GuestNetworkComponent } from './basic/side-nav/guest-network/guest-network.component';
 import {MatSelectModule} from "@angular/material/select";
 import {MatTableModule} from "@angular/material/table";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import {MatTableModule} from "@angular/material/table";
     RouterOutlet,
     MatSelectModule,
     MatTableModule,
+    MatCheckboxModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
