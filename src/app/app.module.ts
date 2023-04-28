@@ -20,6 +20,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatTableModule} from "@angular/material/table";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -33,20 +34,21 @@ import {FormsModule} from "@angular/forms";
     WirelessComponent,
     GuestNetworkComponent,
   ],
-  imports: [
-    BrowserModule,
-    MatCardModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    AppRoutingModule,
-    RouterLink,
-    RouterLinkActive,
-    RouterOutlet,
-    MatSelectModule,
-    MatTableModule,
-    MatCheckboxModule,
-    FormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        MatCardModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        AppRoutingModule,
+        RouterLink,
+        RouterLinkActive,
+        RouterOutlet,
+        MatSelectModule,
+        MatTableModule,
+        MatCheckboxModule,
+        FormsModule,
+        MatInputModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -19,6 +19,9 @@ export class InternetComponent {
   ]
   selected: string = this.connectOptions[0];
   useAnotherDNS: boolean = false;
+  primaryDNS: string = this.DNS[0].value;
+  secondaryDNS: string = this.DNS[1].value;
+  renewDisable: boolean = true;
   onDetect() {
     this.selected = 'Dynamic IP';
   }
@@ -28,13 +31,24 @@ export class InternetComponent {
   }
 
   onRelease() {
+    this.renewDisable = false;
+    for (let item of this.ipConfig) {
+      item.value = "";
+    }
 
   }
   onRenew() {
-
+    this.renewDisable = true;
+    this.ipConfig = [
+      {name: "IP Address:", value: "192.168.3.209"},
+      {name: "Subnet Mask:", value: "255.255.255.0"},
+      {name: "Default Gateway:", value: "172.31.70.155"},
+    ];
   }
 
   onSave() {
-
+    this.DNS[0].value = this.primaryDNS;
+    this.DNS[1].value = this.secondaryDNS;
+    // console.log(this.DNS[0].value);
   }
 }

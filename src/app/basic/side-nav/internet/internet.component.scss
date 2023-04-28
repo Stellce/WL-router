@@ -1,6 +1,6 @@
 #outer-card {
   width: 1024px;
-  height: 812px;
+  min-height: 812px;
   border-radius: 30px;
   margin: 0 0;
   padding-top: 50px;
@@ -39,7 +39,7 @@ button{
   //margin-top: -10px;
 }
 
-mat-form-field {
+#selector {
   margin: 30px;
 }
 

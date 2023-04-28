@@ -3,7 +3,7 @@
     <mat-card-content>
       <div class="connectionType">
         <p>WAN Connection Type:</p>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" id="selector">
           <mat-select [(value)]="selected" (selectionChange)="onSelect($event)">
             <mat-option [value]="option" *ngFor="let option of connectOptions">{{option}}</mat-option>
           </mat-select>
@@ -20,14 +20,32 @@
           <div class="props">
             <p>{{element.name}}</p> <p>{{element.value}}</p>
           </div>
-          <div class="secProps" *ngIf="element.name == 'Default Gateway:'">
+        </li>
+        <li>
+          <div class="secProps">
             <mat-card-actions >
-              <button mat-raised-button color="accent" disabled (click)="onRenew()">Renew</button>
+              <button mat-raised-button color="accent" [disabled]="renewDisable" (click)="onRenew()">Renew</button>
               <button mat-raised-button color="accent" (click)="onRelease()">Release</button>
             </mat-card-actions>
 
             <mat-checkbox [(ngModel)]="useAnotherDNS">Use these DNS:</mat-checkbox>
+          </div>
+        </li>
+        <li>
+          <div class="props">
+            <p>{{DNS[0].name}}</p>
+            <mat-form-field>
 
+              <input matInput [value]="primaryDNS" [disabled]="!useAnotherDNS"/>
+            </mat-form-field>
+          </div>
+        </li>
+        <li>
+          <div class="props">
+            <p>{{DNS[1].name}}</p>
+            <mat-form-field>
+              <input matInput [value]="secondaryDNS" [disabled]="!useAnotherDNS"/>
+            </mat-form-field>
           </div>
         </li>
       </ul>
