@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MatSelectChange} from "@angular/material/select";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-internet',
@@ -22,6 +23,9 @@ export class InternetComponent {
   primaryDNS: string = this.DNS[0].value;
   secondaryDNS: string = this.DNS[1].value;
   renewDisable: boolean = true;
+  ipAddress: string = this.ipConfig[0].value;
+  subnetMask: string = this.ipConfig[1].value;
+  defaultGateway: string = this.ipConfig[2].value;
   onDetect() {
     this.selected = 'Dynamic IP';
   }
@@ -33,7 +37,7 @@ export class InternetComponent {
   onRelease() {
     this.renewDisable = false;
     for (let item of this.ipConfig) {
-      item.value = "";
+      item.value = " - . - . - . - ";
     }
 
   }
@@ -46,9 +50,7 @@ export class InternetComponent {
     ];
   }
 
-  onSave() {
-    this.DNS[0].value = this.primaryDNS;
-    this.DNS[1].value = this.secondaryDNS;
-    // console.log(this.DNS[0].value);
+  onSubmit(form: NgForm) {
+    console.log(form.value);
   }
 }
