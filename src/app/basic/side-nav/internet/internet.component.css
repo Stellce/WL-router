@@ -31,7 +31,6 @@ mat-card-content {
 }
 
 button {
-  width: 100px;
   height: 50px !important;
   font-size: 16pt;
 }

@@ -25,33 +25,33 @@
             <button mat-raised-button color="accent" [disabled]="renewDisable" (click)="onRenew()">Renew</button>
             <button mat-raised-button color="accent" (click)="onRelease()">Release</button>
           </mat-card-actions>
-          <mat-checkbox name="check" [(ngModel)]="useAnotherDNS">Use these DNS:</mat-checkbox>
+          <mat-checkbox [(ngModel)]="useAnotherDNS" [ngModelOptions]="{standalone: true}">Use these DNS:</mat-checkbox>
           <li>
             <p>{{DNS[0].name}}</p>
             <mat-form-field appearance="outline">
               <input
-                matInput
-                minlength="7"
-                maxlength="15"
-                size="15"
-                name="primaryDNS"
-                [(ngModel)]="primaryDNS"
-                [value]="DNS[0].value"
-                [disabled]="!useAnotherDNS"/>
+              matInput
+              minlength="7"
+              maxlength="15"
+              size="15"
+              name="primaryDNS"
+              [(ngModel)]="primaryDNS"
+              [value]="DNS[0].value"
+              [disabled]="!useAnotherDNS"/>
             </mat-form-field>
           </li>
           <li>
             <p>{{DNS[1].name}}</p>
             <mat-form-field appearance="outline">
               <input
-                matInput
-                minlength="7"
-                maxlength="15"
-                size="15"
-                name="secondaryDNS"
-                [(ngModel)]="secondaryDNS"
-                [value]="DNS[1].value"
-                [disabled]="!useAnotherDNS"/>
+              matInput
+              minlength="7"
+              maxlength="15"
+              size="15"
+              name="secondaryDNS"
+              [(ngModel)]="secondaryDNS"
+              [value]="DNS[1].value"
+              [disabled]="!useAnotherDNS"/>
             </mat-form-field>
           </li>
         </ul>
@@ -65,59 +65,145 @@
             <p>{{ipConfig[0].name}}</p>
             <mat-form-field appearance="outline">
               <input
-                matInput
-                minlength="7"
-                maxlength="15"
-                size="15"
-                [name]="ipConfig[0].name"
-                [(ngModel)]="ipConfig[0].value"
-                [value]="ipAddress" />
+              matInput
+              minlength="7"
+              maxlength="15"
+              size="15"
+              [name]="ipConfig[0].name"
+              [(ngModel)]="ipConfig[0].value"
+              [value]="ipConfig[0].value" />
             </mat-form-field>
           </li>
           <li>
             <p>{{ipConfig[1].name}}</p>
             <mat-form-field appearance="outline">
               <input
-                matInput
-                minlength="7"
-                maxlength="15"
-                size="15"
-                [name]="ipConfig[1].name"
-                [(ngModel)]="ipConfig[1].value"
-                [value]="subnetMask" />
+              matInput
+              minlength="7"
+              maxlength="15"
+              size="15"
+              [name]="ipConfig[1].name"
+              [(ngModel)]="ipConfig[1].value"
+              [value]="ipConfig[1].value" />
             </mat-form-field>
           </li>
           <li>
             <p>{{ipConfig[2].name}}</p>
             <mat-form-field appearance="outline">
               <input
-                matInput
-                [name]="ipConfig[2].name"
-                minlength="7"
-                maxlength="15"
-                size="15"
-                [(ngModel)]="ipConfig[2].value"
-                [value]="defaultGateway" />
+              matInput
+              [name]="ipConfig[2].name"
+              minlength="7"
+              maxlength="15"
+              size="15"
+              [(ngModel)]="ipConfig[2].value"
+              [value]="ipConfig[2].value" />
             </mat-form-field>
           </li>
           <li>
             <p>{{DNS[0].name}}</p>
             <mat-form-field appearance="outline">
               <input
-                matInput
-                [name]="DNS[0].name"
-                [(ngModel)]="DNS[0].value"
-                [value]="DNS[0].value" />
+              matInput
+              [name]="DNS[0].name"
+              [(ngModel)]="DNS[0].value"
+              [value]="DNS[0].value" />
             </mat-form-field>
           </li>
           <li>
             <p>{{DNS[1].name}}</p>
             <mat-form-field appearance="outline">
               <input
+              matInput
+              [name]="DNS[1].name"
+              [(ngModel)]="DNS[1].value"
+              [value]="DNS[1].value" />
+            </mat-form-field>
+          </li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="selected===connectOptions[2]">
+      <mat-card-content>
+        <ul>
+          <li>
+            <p>User name: </p>
+            <mat-form-field appearance="outline">
+              <input
+              matInput
+              name="userName"
+              [(ngModel)]="user.userName"
+              [value]="user.userName"
+              [disabled]="connected"/>
+            </mat-form-field>
+          </li>
+          <li>
+            <p>Password: </p>
+            <mat-form-field appearance="outline">
+              <input
+              matInput
+              type="password"
+              name="password"
+              [(ngModel)]="user.password"
+              [value]="user.password"
+              [disabled]="connected"/>
+            </mat-form-field>
+          </li>
+          <mat-card-actions>
+            <button mat-raised-button color="accent" (click)="onDisconnect()" [disabled]="!connected">Disconnect</button>
+            <button mat-raised-button color="accent" (click)="onConnect()" [disabled]="connected">Connect</button>
+          </mat-card-actions>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="selected===connectOptions[3]">
+      <mat-card-content>
+        <ul>
+          <li>
+            <p>User name: </p>
+            <mat-form-field appearance="outline">
+              <input
+              matInput
+              name="userName"
+              [(ngModel)]="user.userName"
+              [value]="user.userName"
+              [disabled]="connected"/>
+            </mat-form-field>
+          </li>
+          <li>
+            <p>Password: </p>
+            <mat-form-field appearance="outline">
+              <input
+              matInput
+              type="password"
+              name="password"
+              [(ngModel)]="user.password"
+              [value]="user.password"
+              [disabled]="connected"/>
+            </mat-form-field>
+          </li>
+          <li>
+            <p>Auth Server: </p>
+            <mat-form-field appearance="outline">
+              <input
+              matInput
+              name="authServer"
+              [(ngModel)]="bigPond.authServer"
+              [value]="bigPond.authServer"
+              />
+            </mat-form-field>
+          </li>
+          <li>
+            <p>Auth Domain: </p>
+            <mat-form-field appearance="outline">
+              <input
                 matInput
-                [name]="DNS[1].name"
-                [(ngModel)]="DNS[1].value"
-                [value]="DNS[1].value" />
+                name="authDomain"
+                [(ngModel)]="bigPond.authDomain"
+                [value]="bigPond.authDomain"
+              />
             </mat-form-field>
           </li>
         </ul>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatSelectChange} from "@angular/material/select";
 import {NgForm} from "@angular/forms";
+import {UserDataModel} from "./user-data.model";
 
 @Component({
   selector: 'app-internet',
@@ -23,9 +24,16 @@ export class InternetComponent {
   primaryDNS: string = this.DNS[0].value;
   secondaryDNS: string = this.DNS[1].value;
   renewDisable: boolean = true;
-  ipAddress: string = this.ipConfig[0].value;
-  subnetMask: string = this.ipConfig[1].value;
-  defaultGateway: string = this.ipConfig[2].value;
+  user: UserDataModel = {
+    userName: "Admin",
+    password: "admin"
+  };
+  connected: boolean = false;
+  bigPond: {user: UserDataModel, authServer: string, authDomain: string} = {
+    user: this.user,
+    authServer: "sm-server",
+    authDomain: "sm-domain"
+  };
   onDetect() {
     this.selected = 'Dynamic IP';
   }
@@ -48,6 +56,14 @@ export class InternetComponent {
       {name: "Subnet Mask:", value: "255.255.255.0"},
       {name: "Default Gateway:", value: "172.31.70.155"},
     ];
+  }
+
+  onConnect() {
+    this.connected = true;
+  }
+
+  onDisconnect() {
+    this.connected = false;
   }
 
   onSubmit(form: NgForm) {
