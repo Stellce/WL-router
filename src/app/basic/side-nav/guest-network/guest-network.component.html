@@ -1,1 +1,39 @@
-<p>guest-network works!</p>
+<mat-card id="outer-card">
+  <form #netForm="ngForm" (submit)="onSubmit(netForm)">
+    <mat-card>
+      <mat-card-content>
+        <ul>
+          <li>
+            <p>Allow Guests To Access My Local Network</p>
+            <mat-button-toggle-group name="allowAccess" [(ngModel)]="allowAccess" appearance="legacy" [disabled]="wireless24G === 'OFF'">
+              <mat-button-toggle
+                value="ON"
+                [checked]="allowAccess == 'ON'"
+              >ON</mat-button-toggle>
+              <mat-button-toggle
+                value="OFF"
+                [checked]="allowAccess == 'OFF'"
+              >OFF</mat-button-toggle>
+            </mat-button-toggle-group>
+          </li>
+          <li>
+            <p>Wireless 2.4GHz:</p>
+            <mat-button-toggle-group name="wireless24G" [(ngModel)]="wireless24G" appearance="legacy">
+              <mat-button-toggle
+                value="ON"
+                [checked]="wireless24G === 'ON'"
+              >ON</mat-button-toggle>
+              <mat-button-toggle
+                value="OFF"
+                [checked]="wireless24G === 'OFF'"
+              >OFF</mat-button-toggle>
+            </mat-button-toggle-group>
+          </li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Save</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

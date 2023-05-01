@@ -1,0 +1,74 @@
+#outer-card {
+  width: 1024px;
+  min-height: 812px;
+  border-radius: 30px;
+  margin: 0 0;
+  padding-top: 50px;
+  background-color: rgba(92, 0, 136, 1);
+  box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
+}
+
+p {
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  font-size: 14pt;
+  color: white;
+  //margin: 22px auto;
+  text-align: center;
+  display: inline-block;
+}
+
+mat-card{
+  width: 882px;
+  border-radius: 30px;
+  margin: 25px auto;
+  background-color: rgba(92, 0, 136, 1);
+  box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
+}
+
+mat-card-content{
+  display: flex;
+  flex-direction: row;
+  //margin-bottom: 50px;
+}
+
+button{
+  //width: 100px;
+  height: 50px !important;
+  font-size: 16pt;
+  //margin-top: -10px;
+}
+
+#selector {
+  margin: 30px;
+}
+
+.connectionType {
+  width: 100%;
+  height: 100%;
+  margin: 0 50px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  margin: 30px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+#save{
+  margin: 20px 150px;
+}
+
+mat-checkbox {
+  font-size: 14pt;
+}

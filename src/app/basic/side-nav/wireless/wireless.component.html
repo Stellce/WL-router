@@ -1,1 +1,47 @@
-<p>wireless works!</p>
+<mat-card id="outer-card">
+
+  <form (submit)="onSubmit(wirelessForm)" #wirelessForm="ngForm">
+    <mat-card>
+      <mat-card-content>
+          <ul>
+            <li>
+              <p>Wireless:</p>
+              <mat-button-toggle-group name="wireless" [(ngModel)]="wireless" appearance="legacy">
+                <mat-button-toggle value="ON" name="wireless" [checked]="wireless == 'ON'">ON</mat-button-toggle>
+                <mat-button-toggle value="OFF" [checked]="wireless == 'OFF'">OFF</mat-button-toggle>
+              </mat-button-toggle-group>
+            </li>
+            <li>
+              <p>Network Name(SSID):</p>
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  name="ssid"
+                  [(ngModel)]="ssid"
+                  [value]="ssid"
+                />
+              </mat-form-field>
+            </li>
+            <li>
+              <mat-checkbox name="hiddenSSID" [(ngModel)]="hiddenSSID" [checked]="hiddenSSID">hide SSID</mat-checkbox>
+            </li>
+            <li>
+              <p>Password</p>
+              <mat-form-field appearance="outline">
+                <input
+                matInput
+                name="password"
+                [(ngModel)]="password"
+                [value]="password"
+                />
+              </mat-form-field>
+            </li>
+          </ul>
+
+      </mat-card-content>
+    </mat-card>
+    <mat-card-actions>
+      <button id="save" mat-raised-button color="accent" type="submit">Save</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

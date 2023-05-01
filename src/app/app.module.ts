@@ -21,6 +21,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {MatInputModule} from "@angular/material/input";
         MatCheckboxModule,
         FormsModule,
         MatInputModule,
+        MatButtonToggleModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
