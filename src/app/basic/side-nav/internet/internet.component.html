@@ -1,5 +1,8 @@
 <mat-card id="outer-card">
 
+  <button mat-button (click)="onSendTest()">Send test req</button>
+  <p>Result of test: {{testRes}}</p>
+
   <mat-card>
     <mat-card-content>
       <div class="connectionType">

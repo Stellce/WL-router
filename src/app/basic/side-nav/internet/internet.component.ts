@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatSelectChange} from "@angular/material/select";
 import {NgForm} from "@angular/forms";
 import {UserDataModel} from "./user-data.model";
+import {AppService} from "../../../app.service";
 
 @Component({
   selector: 'app-internet',
@@ -9,6 +10,7 @@ import {UserDataModel} from "./user-data.model";
   styleUrls: ['./internet.component.scss']
 })
 export class InternetComponent {
+  constructor(private appService: AppService) {}
   connectOptions = ['Dynamic IP', 'Static IP', 'PPPoE', 'BigPond Cable'];
   ipConfig: {name: string, value: string}[] = [
     {name: "IP Address:", value: "192.168.3.209"},
@@ -34,6 +36,7 @@ export class InternetComponent {
     authServer: "sm-server",
     authDomain: "sm-domain"
   };
+  testRes = 'None';
   onDetect() {
     this.selected = 'Dynamic IP';
   }
@@ -68,5 +71,12 @@ export class InternetComponent {
 
   onSubmit(form: NgForm) {
     console.log(form.value);
+  }
+
+  onSendTest() {
+    this.appService.sendTest().subscribe(res => {
+      console.log(res);
+      this.testRes = res.value.message;
+    });
   }
 }

@@ -22,6 +22,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
   ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         MatCardModule,
         BrowserAnimationsModule,
         MatButtonModule,
