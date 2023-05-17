@@ -22,6 +22,11 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {StatusComponent} from "./advanced/side-nav/status/status.component";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {WanComponent} from "./advanced/side-nav/network/wan/wan.component";
+import {MacCloneComponent} from "./advanced/side-nav/network/mac-clone/mac-clone.component";
 
 @NgModule({
   declarations: [
@@ -34,23 +39,29 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     NetworkComponent,
     WirelessComponent,
     GuestNetworkComponent,
+
+    StatusComponent,
+    WanComponent,
+    MacCloneComponent
   ],
-    imports: [
-        BrowserModule,
-        MatCardModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        AppRoutingModule,
-        RouterLink,
-        RouterLinkActive,
-        RouterOutlet,
-        MatSelectModule,
-        MatTableModule,
-        MatCheckboxModule,
-        FormsModule,
-        MatInputModule,
-        MatButtonToggleModule,
-    ],
+  imports: [
+    BrowserModule,
+    MatCardModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    AppRoutingModule,
+    RouterLink,
+    RouterLinkActive,
+    RouterOutlet,
+    MatSelectModule,
+    MatTableModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonToggleModule,
+    MatDividerModule,
+    MatExpansionModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
