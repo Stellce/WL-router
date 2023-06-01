@@ -1,0 +1,103 @@
+<mat-card id="outer-card">
+  <mat-card id="inner-card">
+    <mat-card-content>
+      <mat-stepper linear="true">
+        <mat-step [stepControl]="timeZoneGroup" [editable]="isEditable">
+          <form [formGroup]="timeZoneGroup">
+            <ng-template matStepLabel>Time Zone</ng-template>
+            <mat-form-field id="timezone" appearance="outline">
+              <input
+                type="text"
+                placeholder="Select time zone"
+                aria-label="Time zone"
+                matInput
+                formControlName="timeZone"
+                [matAutocomplete]="auto"
+                required
+              />
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let timezone of filteredTimeZones | async" [value]="timezone">{{timezone}}</mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="wanConnGroup" [editable]="isEditable">
+          <form [formGroup]="wanConnGroup">
+            <ng-template matStepLabel>WAN Connection Type</ng-template>
+              <mat-label id="wan-connection-label" >Choose your connection type: </mat-label>
+              <button mat-raised-button color="accent" (click)="onWanConnDetect()" class="detectBtn">Detect</button>
+              <span>{{wanConnSelected}}</span>
+              <mat-radio-group aria-labelledby="wan-connection-label" class="wan-conn-group" formControlName="conType">
+                <mat-radio-button class="wan-conn-radioBtn" *ngFor="let connType of wanConnTypes" [value]="connType">{{connType}}</mat-radio-button>
+              </mat-radio-group>
+              <mat-radio-group aria-labelledby="wan-connection-mac" class="wan-conn-group" formControlName="cloneMac">
+                <mat-radio-button class="wan-conn-radioBtn" *ngFor="let cloneMACel of cloneMAC" [value]="cloneMACel">{{cloneMACel}}</mat-radio-button>
+              </mat-radio-group>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="wirelessSettingsGroup" [editable]="isEditable">
+          <form [formGroup]="wirelessSettingsGroup">
+            <ng-template matStepLabel>Wireless Settings</ng-template>
+            <ul>
+              <li>
+                <span>Wireless 2.4GHz:</span>
+                <mat-button-toggle-group formControlName="isSignal24" appearance="legacy">
+                  <mat-button-toggle value="True" [checked]="wirelessSettings.isSignal24">ON</mat-button-toggle>
+                  <mat-button-toggle value="False">OFF</mat-button-toggle>
+                </mat-button-toggle-group>
+              </li>
+              <li>
+                <span>
+                  SSID:
+                </span>
+                <mat-form-field appearance="outline">
+                  <input id="ssid" name="ssid" matInput formControlName="ssid" [value]="wirelessSettings.ssid"  required/>
+                </mat-form-field>
+              </li>
+              <li>
+                <span>
+                  Password:
+                </span>
+                <mat-form-field appearance="outline">
+                  <input name="password" matInput formControlName="password" [value]="wirelessSettings.password" required/>
+                </mat-form-field>
+              </li>
+            </ul>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Summary</ng-template>
+          <ul>
+            <li>
+              <span>Time Zone: </span> <span>{{timeZoneGroup.get("timeZone")?.value}}</span>
+            </li>
+            <li>
+              <span>Wan Connection Type: </span> <span>{{wanConnGroup.get("conType")?.value}}</span>
+            </li>
+            <li>
+              <span>Wireless 2.4GHz: </span> <span>{{wirelessSettingsGroup.get("isSignal24")?.value ? "ON" : "OFF"}}</span>
+            </li>
+            <li>
+              <span>Network name (ssid): </span> <span>{{wirelessSettingsGroup.get("ssid")?.value}}</span>
+            </li>
+            <li>
+              <span>Password: </span> <span>{{wirelessSettingsGroup.get("password")?.value}}</span>
+            </li>
+          </ul>
+          <button mat-raised-button color="accent" routerLink="/basic" (click)="onConfirm()">Confirm</button>
+        </mat-step>
+      </mat-stepper>
+    </mat-card-content>
+  </mat-card>
+</mat-card>

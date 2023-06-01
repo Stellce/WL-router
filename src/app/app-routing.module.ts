@@ -13,7 +13,7 @@ import {WanComponent} from "./advanced/side-nav/network/wan/wan.component";
 import {MacCloneComponent} from "./advanced/side-nav/network/mac-clone/mac-clone.component";
 
 const routes: Routes = [
-  { path: 'quickSetup', component: QuickSetupComponent},
+  { path: 'quick-setup', component: QuickSetupComponent},
   { path: 'basic', component: BasicComponent,
     children: [
       { path: 'network', component: NetworkComponent},
@@ -33,7 +33,7 @@ const routes: Routes = [
   },
   // { path: 'login', component: LoginComponent},
   // { path: '**', component: PageNotFoundComponent}
-  {path: '', redirectTo: 'basic', pathMatch: "full"}
+  {path: '', redirectTo: 'quick-setup', pathMatch: "full"}
 ]
 
 @NgModule({
