@@ -1,12 +1,25 @@
-.headnav {
+header {
   display: flex;
   flex-direction: row;
-  margin: 0 auto -60px auto;
+  margin: 0 auto -60px;
   z-index: 1;
 }
 
+.logo {
+  display: flex;
+  width: 15vw;
+  height: 150px;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-size: 72pt;
+  color: rgb(173, 0, 255);
+  align-items: center;
+  justify-content: center;
+  margin-right: 2vmin;
+}
+
 .spacer {
-  width: 75px;
+  width: 15vw;
 }
 
 button {
@@ -14,9 +27,11 @@ button {
   font-style: italic;
   font-size: 23px;
   color: white;
-  width: 208px;
+  width: 15vw;
+  max-width: 200px;
+  min-width: 150px;
+  margin: 0 1% !important;
   height: 55px !important;
-  margin: 0 35px !important;
   align-self: center;
   border-radius: 13px;
 }
@@ -26,8 +41,9 @@ button {
   gap: 9px;
   align-items: center;
   flex-direction: column;
-  width: 260px;
-  margin-left: -35px;
+  width: 15vw;
+  margin-left: 1%;
+  justify-content: center;
 }
 
 #inline-buttons button {

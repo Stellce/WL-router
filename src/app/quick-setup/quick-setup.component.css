@@ -32,6 +32,11 @@ p {
   display: inline-block;
 }
 
+.mat-stepper-horizontal {
+  border-radius: 20px;
+  background-color: #3b0057;
+}
+
 #timezone {
   width: 100%;
 }
