@@ -4,7 +4,7 @@
     <div id="statusHeader"><h1>Status</h1></div>
     <mat-divider></mat-divider>
     <ul *ngFor="let conf of cfg">
-      <h1>{{conf.name}}</h1>
+      <h2>{{conf.name}}</h2>
       <li *ngFor="let prop of conf.value">
         <p>{{prop.name}}:</p> <p>{{prop.value}}</p> <p *ngIf="prop.name === 'IP Address'"> {{IPv4ConType}}</p> <button mat-raised-button color="primary" *ngIf="prop.name === 'Default Gateway'" (click)="onIPRelease">Release</button>
       </li>

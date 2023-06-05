@@ -1,39 +1,27 @@
 header{
   display: flex;
+  width: 1024px;
   flex-direction: row;
+  justify-content: center;
   margin: 0 auto -60px;
   z-index: 1;
 }
 
 .logo{
   display: flex;
-  width: 15vw;
+  position: absolute;
   height: 150px;
+  left: calc(50% - 812px);
   font-family: 'Inter', sans-serif;
   font-style: italic;
   font-size: 72pt;
   color: rgba(173, 0, 255, 1);
   align-items: center;
-  justify-content: center;
-  margin-right: 2vmin;
-}
-
-.spacer{
-  width: 15vw;
+  margin: 0 50px;
 }
 
 button {
-  font-family: 'Inter', sans-serif;
-  font-style: italic;
-  font-size: 23px;
-  color: white;
-  width: 15vw;
-  max-width: 200px;
-  min-width: 150px;
   margin: 0 1% !important;
-  height: 55px !important;
-  align-self: center;
-  border-radius: 13px;
 }
 
 #inline-buttons {
@@ -41,14 +29,16 @@ button {
   gap: 9px;
   align-items: center;
   flex-direction: column;
-  width: 15vw;
-  margin-left: 1%;
+  width: 20%;
+  //max-width: 200px;
+  margin: 0 1%;
   justify-content: center;
 }
 
 #inline-buttons button {
   margin: 5px;
   flex-flow: column wrap;
+  width: 100% !important;
 }
 
 

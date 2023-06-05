@@ -1,7 +1,7 @@
 .outer-advanced {
   display: flex;
   flex-direction: column;
-  margin-left: -208px;
+  margin-left: -300px;
 }
 
 .advanced{
@@ -10,37 +10,13 @@
   flex-direction: row;
 }
 
-.side-nav {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  height: 364px;
-  margin-top: 75px;
-}
-
-button {
-  font-family: 'Inter', sans-serif;
-  font-style: italic;
-  font-size: 23px;
-  color: white;
-  width: 208px !important;
-  height: 61px !important;
-  margin: 10px 35px;
-  align-self: center;
-  border-radius: 13px;
-}
-
-
-
-
-
 mat-expansion-panel {
-  width: 208px;
+  width: 200px;
   border-radius: 13px;
   background-color: #260038;
   align-self: center;
-  margin: 10px 35px;
-
+  display: flex;
+  flex-direction: column;
   mat-expansion-panel-header {
     height: 61px;
     background-color: #3b0057;
@@ -52,11 +28,13 @@ mat-expansion-panel {
       justify-content: center;
     }
   }
+  ::ng-deep .mat-expansion-panel-body {
+    padding: 0;
+  }
   button {
-    margin-left: -25px;
+    margin: 10px 0;
   }
 }
-
 
 
 

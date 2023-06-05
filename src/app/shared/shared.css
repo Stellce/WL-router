@@ -1,0 +1,20 @@
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 75px 50px;
+  gap: 20px;
+}
+
+button {
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-size: 23px;
+  color: white;
+  width: 200px !important;
+  height: 61px !important;
+  align-self: center;
+  border-radius: 13px;
+}
+
+/*# sourceMappingURL=shared.css.map */
