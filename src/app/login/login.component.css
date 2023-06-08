@@ -1,0 +1,16 @@
+mat-card {
+  width: 882px;
+  border-radius: 30px;
+  margin: 25px auto;
+  background-color: rgb(92, 0, 136);
+  box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
+}
+
+form {
+  margin: 70px auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=login.component.css.map */

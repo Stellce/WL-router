@@ -6,7 +6,7 @@ import {map, Observable, startWith} from "rxjs";
 @Component({
   selector: `app-quick-setup`,
   templateUrl: `./quick-setup.component.html`,
-  styleUrls: [`./quick-setup.component.scss`]
+  styleUrls: [`./quick-setup.component.scss`, `../shared/shared.scss`]
 })
 export class QuickSetupComponent implements OnInit{
   isEditable: boolean = true;
@@ -37,7 +37,7 @@ export class QuickSetupComponent implements OnInit{
     "Clone MAC address"
   ];
   wirelessSettings = {
-    isSignal24: true,
+    isSignal24: "ON",
     ssid: "TP-LINK_7B00",
     password: "tplinkpassword"
   }
@@ -57,6 +57,12 @@ export class QuickSetupComponent implements OnInit{
       startWith(""),
       map(value => this._filter(value || ''))
     );
+    this.setDefaultsForm();
+  }
+  setDefaultsForm() {
+    this.wirelessSettingsGroup.get('isSignal24')?.setValue(this.wirelessSettings.isSignal24);
+    this.wirelessSettingsGroup.get('ssid')?.setValue(this.wirelessSettings.ssid);
+    this.wirelessSettingsGroup.get('password')?.setValue(this.wirelessSettings.password);
   }
   onWanConnDetect() {
     this.wanConnSelected = this.wanConnTypes[0];

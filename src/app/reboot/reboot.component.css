@@ -1,0 +1,52 @@
+mat-card {
+  width: 882px;
+  border-radius: 30px;
+  margin: 25px auto;
+  background-color: rgb(92, 0, 136);
+  box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
+}
+
+mat-card {
+  height: 500px;
+  position: absolute;
+  left: calc(50% - 441px);
+  top: calc(50% - 350px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d0046;
+}
+
+.askReboot, .reboot {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 250px;
+  width: 575px;
+  flex-direction: column;
+}
+
+p {
+  text-align: center;
+  font-size: 64px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+mat-progress-bar {
+  width: 100%;
+}
+
+button {
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-size: 23px;
+  font-weight: bold;
+  color: white;
+  width: 200px !important;
+  height: 61px !important;
+  align-self: center;
+  border-radius: 13px;
+}
+
+/*# sourceMappingURL=reboot.component.css.map */

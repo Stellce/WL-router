@@ -17,23 +17,25 @@ p {
 }
 
 h1 {
-  font-family: 'Inter', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 28px;
   margin: 10px 20px;
   padding: 5px;
   text-align: center;
   background-color: #3b0057;
   border-radius: 10px;
+  font-weight: bold;
 }
 
 h2 {
-  font-family: 'Inter', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 23px;
   text-align: center;
   margin: 10px;
   padding: 5px;
   background: #46006c;
   border-radius: 10px;
+  font-weight: bold;
 }
 
 mat-card{

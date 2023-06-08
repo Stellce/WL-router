@@ -1,0 +1,11 @@
+<mat-card>
+  <div class="askReboot" *ngIf="!reboot">
+    <p>Reboot router now?</p>
+    <button mat-raised-button color="accent" (click)="onReboot()">Yes</button>
+  </div>
+
+  <div class="reboot" *ngIf="reboot">
+    <p id="id">Rebooting</p>
+    <mat-progress-bar mode="indeterminate" color="accent" id="progress"></mat-progress-bar>
+  </div>
+</mat-card>

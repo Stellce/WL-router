@@ -33,6 +33,7 @@
               <mat-radio-group aria-labelledby="wan-connection-label" class="wan-conn-group" formControlName="conType">
                 <mat-radio-button class="wan-conn-radioBtn" *ngFor="let connType of wanConnTypes" [value]="connType">{{connType}}</mat-radio-button>
               </mat-radio-group>
+            <p>Clone MAC?</p>
               <mat-radio-group aria-labelledby="wan-connection-mac" class="wan-conn-group" formControlName="cloneMac">
                 <mat-radio-button class="wan-conn-radioBtn" *ngFor="let cloneMACel of cloneMAC" [value]="cloneMACel">{{cloneMACel}}</mat-radio-button>
               </mat-radio-group>
@@ -49,8 +50,8 @@
               <li>
                 <span>Wireless 2.4GHz:</span>
                 <mat-button-toggle-group formControlName="isSignal24" appearance="legacy">
-                  <mat-button-toggle value="True" [checked]="wirelessSettings.isSignal24">ON</mat-button-toggle>
-                  <mat-button-toggle value="False">OFF</mat-button-toggle>
+                  <mat-button-toggle value="ON" [checked]="wirelessSettings.isSignal24 == 'ON'">ON</mat-button-toggle>
+                  <mat-button-toggle value="OFF">OFF</mat-button-toggle>
                 </mat-button-toggle-group>
               </li>
               <li>
@@ -58,7 +59,7 @@
                   SSID:
                 </span>
                 <mat-form-field appearance="outline">
-                  <input id="ssid" name="ssid" matInput formControlName="ssid" [value]="wirelessSettings.ssid"  required/>
+                  <input id="ssid" name="ssid" matInput formControlName="ssid" [placeholder]="wirelessSettings.ssid" required/>
                 </mat-form-field>
               </li>
               <li>
@@ -66,7 +67,7 @@
                   Password:
                 </span>
                 <mat-form-field appearance="outline">
-                  <input name="password" matInput formControlName="password" [value]="wirelessSettings.password" required/>
+                  <input name="password" matInput formControlName="password" [placeholder]="wirelessSettings.password" required/>
                 </mat-form-field>
               </li>
             </ul>
@@ -86,7 +87,7 @@
               <span>Wan Connection Type: </span> <span>{{wanConnGroup.get("conType")?.value}}</span>
             </li>
             <li>
-              <span>Wireless 2.4GHz: </span> <span>{{wirelessSettingsGroup.get("isSignal24")?.value ? "ON" : "OFF"}}</span>
+              <span>Wireless 2.4GHz: </span> <span>{{wirelessSettingsGroup.get("isSignal24")?.value}}</span>
             </li>
             <li>
               <span>Network name (ssid): </span> <span>{{wirelessSettingsGroup.get("ssid")?.value}}</span>

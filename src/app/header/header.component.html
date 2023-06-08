@@ -1,5 +1,5 @@
 <div class="logo">WL</div>
-<header>
+<header *ngIf="userIsAuthenticated">
   <button color="primary"
           mat-raised-button
           routerLink="/quick-setup"
@@ -22,10 +22,12 @@
     <button color="primary"
             mat-raised-button
             routerLinkActive="mat-accent"
-            type="button">Logout
+            type="button"
+            (click)="onLogout()">Logout
     </button>
     <button color="primary"
             mat-raised-button
+            routerLink="/reboot"
             routerLinkActive="mat-accent"
             type="button">Reboot
     </button>

@@ -1,5 +1,6 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
+import {authGuard} from "./auth.guard";
 
 import {BasicComponent} from "./basic/basic.component";
 import {QuickSetupComponent} from "./quick-setup/quick-setup.component";
@@ -11,29 +12,32 @@ import {GuestNetworkComponent} from "./basic/side-nav/guest-network/guest-networ
 import {StatusComponent} from "./advanced/side-nav/status/status.component";
 import {WanComponent} from "./advanced/side-nav/network/wan/wan.component";
 import {MacCloneComponent} from "./advanced/side-nav/network/mac-clone/mac-clone.component";
+import {LoginComponent} from "./login/login.component";
+import {RebootComponent} from "./reboot/reboot.component";
 
 const routes: Routes = [
-  { path: 'quick-setup', component: QuickSetupComponent},
-  { path: 'basic', component: BasicComponent,
+  {path: 'quick-setup', component: QuickSetupComponent, canActivate: [authGuard]},
+  {path: 'basic', component: BasicComponent, canActivate: [authGuard],
     children: [
-      { path: 'network', component: NetworkComponent},
-      { path: 'internet', component: InternetComponent},
-      { path: 'wireless', component: WirelessComponent},
-      { path: 'guest-net', component: GuestNetworkComponent},
-      { path: '', redirectTo: 'network', pathMatch: "full"}
+      {path: 'network', component: NetworkComponent},
+      {path: 'internet', component: InternetComponent},
+      {path: 'wireless', component: WirelessComponent},
+      {path: 'guest-net', component: GuestNetworkComponent},
+      {path: '', redirectTo: 'network', pathMatch: "full"},
     ]
   },
-  { path: 'advanced', component: AdvancedComponent,
+  {path: 'advanced', component: AdvancedComponent, canActivate: [authGuard],
     children: [
-      { path: 'status', component: StatusComponent},
-      { path: 'wan', component: WanComponent},
-      { path: 'mac-clone', component: MacCloneComponent},
-      { path: '', redirectTo: 'status', pathMatch: "full"}
+      {path: 'status', component: StatusComponent},
+      {path: 'wan', component: WanComponent},
+      {path: 'mac-clone', component: MacCloneComponent},
+      {path: '', redirectTo: 'status', pathMatch: "full"}
     ]
   },
-  // { path: 'login', component: LoginComponent},
-  // { path: '**', component: PageNotFoundComponent}
-  {path: '', redirectTo: 'quick-setup', pathMatch: "full"}
+  {path: 'login', component: LoginComponent},
+  // { path: '**', component: PageNotFoundComponent},
+  {path: 'reboot', component: RebootComponent, canActivate: [authGuard]},
+  {path: '', redirectTo: 'login', pathMatch: "full"}
 ]
 
 @NgModule({

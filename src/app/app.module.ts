@@ -19,18 +19,10 @@ import {StatusComponent} from "./advanced/side-nav/status/status.component";
 import {WanComponent} from "./advanced/side-nav/network/wan/wan.component";
 import {MacCloneComponent} from "./advanced/side-nav/network/mac-clone/mac-clone.component";
 
-import {MatCardModule} from "@angular/material/card";
-import {MatButtonModule} from "@angular/material/button";
-import {MatSelectModule} from "@angular/material/select";
-import {MatTableModule} from "@angular/material/table";
-import {MatCheckboxModule} from "@angular/material/checkbox";
-import {MatInputModule} from "@angular/material/input";
-import {MatButtonToggleModule} from "@angular/material/button-toggle";
-import {MatDividerModule} from "@angular/material/divider";
-import {MatExpansionModule} from "@angular/material/expansion";
-import {MatStepperModule} from "@angular/material/stepper";
-import {MatRadioModule} from "@angular/material/radio";
-import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {AngularMaterialModule} from "./angular-material.module";
+import { LoginComponent } from './login/login.component';
+import { RebootComponent } from './reboot/reboot.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -46,30 +38,22 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
     StatusComponent,
     WanComponent,
-    MacCloneComponent
+    MacCloneComponent,
+    LoginComponent,
+    RebootComponent
   ],
-  imports: [
-    BrowserModule,
-    MatCardModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    AppRoutingModule,
-    RouterLink,
-    RouterLinkActive,
-    RouterOutlet,
-    MatSelectModule,
-    MatTableModule,
-    MatCheckboxModule,
-    FormsModule,
-    MatInputModule,
-    MatButtonToggleModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatStepperModule,
-    ReactiveFormsModule,
-    MatRadioModule,
-    MatAutocompleteModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        RouterLink,
+        RouterLinkActive,
+        RouterOutlet,
+        FormsModule,
+        ReactiveFormsModule,
+        AngularMaterialModule,
+        MatProgressBarModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
