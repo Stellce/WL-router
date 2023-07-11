@@ -1,14 +1,36 @@
-mat-card{
-  width: 882px;
+#loginCard{
+  position: relative;
+  margin: 5rem auto;
+  width: 75vw;
+  aspect-ratio: 2/1;
   border-radius: 30px;
-  margin: 25px auto;
+  padding: 4vw 0;
   background-color: rgba(92, 0, 136, 1);
   box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
 }
+#greet {
+  line-height: 7vw;
+  font-size: 5vw;
+  font-style: normal;
+  letter-spacing: 1vw;
+}
 form {
-  margin: 70px auto;
-  width: 300px;
+  margin: auto;
   display: flex;
   flex-direction: column;
 }
 
+mat-form-field {
+  height: 7vw !important;
+  width: 50vw;
+  font-size: 3vw;
+}
+
+#Submit {
+  width: 50vw !important;
+  height: 5vw !important;
+  padding: 10px;
+  font-size: 3vw;
+  font-style: normal;
+  font-weight: 900;
+}

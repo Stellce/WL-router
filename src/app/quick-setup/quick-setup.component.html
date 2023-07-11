@@ -1,7 +1,7 @@
 <mat-card id="outer-card">
-  <mat-card id="inner-card">
+<!--  <mat-card id="inner-card" *ngIf="true">-->
     <mat-card-content>
-      <mat-stepper linear="true">
+      <mat-stepper linear="true" [orientation]="orientation">
         <mat-step [stepControl]="timeZoneGroup" [editable]="isEditable">
           <form [formGroup]="timeZoneGroup">
             <ng-template matStepLabel>Time Zone</ng-template>
@@ -100,5 +100,5 @@
         </mat-step>
       </mat-stepper>
     </mat-card-content>
-  </mat-card>
+<!--  </mat-card>-->
 </mat-card>

@@ -1,6 +1,6 @@
 header {
   display: flex;
-  width: 1024px;
+  width: 80%;
   flex-direction: row;
   justify-content: center;
   margin: 0 auto -60px;
@@ -18,7 +18,7 @@ header {
   font-weight: bold;
   color: rgb(173, 0, 255);
   align-items: center;
-  margin: 0 50px;
+  margin: 0 1rem;
 }
 
 button {
@@ -39,6 +39,44 @@ button {
   margin: 5px;
   flex-flow: column wrap;
   width: 100% !important;
+}
+
+#inline-buttons {
+  max-width: 150px;
+}
+
+#logCircle {
+  display: none;
+}
+
+@media only screen and (max-width: 1400px) {
+  .logo {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  button {
+    max-width: 20vw;
+    min-width: 100px;
+    font-size: 18px !important;
+  }
+  header {
+    width: 100vw;
+  }
+  #inline-buttons {
+    display: none;
+  }
+  #logCircle {
+    display: flex;
+    position: absolute;
+    right: 10vw;
+    bottom: 10vw;
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50px;
+    background-color: #8a25ff;
+    z-index: 2;
+  }
 }
 
 /*# sourceMappingURL=header.component.css.map */

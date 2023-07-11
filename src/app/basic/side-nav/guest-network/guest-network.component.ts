@@ -4,7 +4,7 @@ import {NgForm} from "@angular/forms";
 @Component({
   selector: 'app-guest-network',
   templateUrl: './guest-network.component.html',
-  styleUrls: ['./guest-network.component.scss']
+  styleUrls: ['./guest-network.component.scss', '../../../shared/shared.scss']
 })
 export class GuestNetworkComponent {
   allowAccess: string = "OFF";

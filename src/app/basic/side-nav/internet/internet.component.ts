@@ -6,7 +6,7 @@ import {UserDataModel} from "./user-data.model";
 @Component({
   selector: 'app-internet',
   templateUrl: './internet.component.html',
-  styleUrls: ['./internet.component.scss']
+  styleUrls: ['./internet.component.scss', '../../../shared/shared.scss']
 })
 export class InternetComponent {
   connectOptions = ['Dynamic IP', 'Static IP', 'PPPoE', 'BigPond Cable'];

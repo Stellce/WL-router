@@ -1,40 +1,19 @@
 #outer-card {
-  position: relative;
-  margin: 0 auto;
-  width: 1024px;
-  min-height: 812px;
-  border-radius: 30px;
-  padding-top: 50px;
-  background-color: rgba(92, 0, 136, 1);
-  box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
-}
-
-mat-card{
-  width: 882px;
-  border-radius: 30px;
-  margin: 25px auto;
-  background-color: rgba(92, 0, 136, 1);
-  box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
-}
-
-mat-card-content{
-  //display: flex;
-  //flex-direction: row;
+  //width: 80% !important;
+  //margin: 1rem auto !important;
+  margin: 0 auto !important;
 }
 
 button{
-  //width: 100px;
   height: 50px !important;
   font-size: 16pt;
-  //margin-top: -10px;
 }
 
 p {
   font-family: Arial, sans-serif;
   font-style: normal;
-  font-size: 14pt;
+  font-size: 16px;
   color: white;
-  //margin: 22px auto;
   text-align: center;
   display: inline-block;
 }
@@ -42,8 +21,14 @@ p {
 .mat-stepper-horizontal {
   border-radius: 20px;
   background-color: #3b0057;
-  //margin: 20px;
+  min-width: 400px;
+  //max-width: 850px;
+  width: 100%;
 }
+
+//.mat-step-header {
+//  border-radius: 30px;
+//}
 
 #timezone{
   width: 100%;
@@ -60,7 +45,7 @@ p {
 }
 
 #wan-connection-label {
-  font-size: 15pt;
+  font-size: 15px;
 }
 
 .detectBtn {
@@ -78,9 +63,40 @@ li {
 span {
   font-family: Arial, sans-serif;
   font-style: normal;
-  font-size: 14pt;
+  font-size: 14px;
   color: white;
-  //margin: 22px auto;
   text-align: center;
   display: inline-block;
+}
+@media only screen and (max-width: 1400px) {
+  #inner-card {
+    width: 70vw;
+    min-width: 280px;
+  }
+  .mat-stepper-vertical {
+    min-width: calc(150px - 32px);
+    width: 100%;
+    border-radius: 20px;
+    background-color: #3b0057;
+  }
+
+  button {
+    min-height: 25px !important;
+    max-width: 100px !important;
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    margin: 0 auto;
+  }
+
+}
+
+.mat-stepper-vertical {
+  min-width: calc(150px - 32px);
+  width: 100%;
+  border-radius: 20px;
+  background-color: #3b0057;
 }

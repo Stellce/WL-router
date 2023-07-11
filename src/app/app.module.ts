@@ -23,6 +23,7 @@ import {AngularMaterialModule} from "./angular-material.module";
 import { LoginComponent } from './login/login.component';
 import { RebootComponent } from './reboot/reboot.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { LogCircleComponent } from './header/log-circle/log-circle.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     WanComponent,
     MacCloneComponent,
     LoginComponent,
-    RebootComponent
+    RebootComponent,
+    // LogCircleComponent
   ],
     imports: [
         BrowserModule,

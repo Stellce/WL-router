@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {AppService} from "../app.service";
 

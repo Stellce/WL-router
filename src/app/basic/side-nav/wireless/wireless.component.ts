@@ -4,7 +4,7 @@ import {NgForm} from "@angular/forms";
 @Component({
   selector: 'app-wireless',
   templateUrl: './wireless.component.html',
-  styleUrls: ['./wireless.component.scss']
+  styleUrls: ['./wireless.component.scss', '../../../shared/shared.scss']
 })
 export class WirelessComponent {
   wireless: string = "ON";

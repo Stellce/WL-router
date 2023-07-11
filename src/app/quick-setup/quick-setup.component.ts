@@ -9,6 +9,7 @@ import {map, Observable, startWith} from "rxjs";
   styleUrls: [`./quick-setup.component.scss`, `../shared/shared.scss`]
 })
 export class QuickSetupComponent implements OnInit{
+  orientation: 'vertical' | 'horizontal' = 'vertical';
   isEditable: boolean = true;
   constructor(private _formBuilder: FormBuilder) {}
   timeZoneGroup = this._formBuilder.group({
@@ -53,6 +54,11 @@ export class QuickSetupComponent implements OnInit{
   }
 
   ngOnInit() {
+    if (window.innerWidth > 1000) {
+      this.orientation = 'horizontal';
+    } else {
+      this.orientation = 'vertical';
+    }
     this.filteredTimeZones = this.timeZoneGroup.get("timeZone")?.valueChanges.pipe(
       startWith(""),
       map(value => this._filter(value || ''))

@@ -11,6 +11,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   exports: [
@@ -26,6 +27,7 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     MatStepperModule,
     MatRadioModule,
     MatAutocompleteModule,
+    MatListModule
   ]
 })
  export class AngularMaterialModule {}
