@@ -24,6 +24,7 @@ import { LoginComponent } from './login/login.component';
 import { RebootComponent } from './reboot/reboot.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { LogCircleComponent } from './header/log-circle/log-circle.component';
+import {CdkDrag, CdkDragHandle} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -44,18 +45,20 @@ import { LogCircleComponent } from './header/log-circle/log-circle.component';
     RebootComponent,
     // LogCircleComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        RouterLink,
-        RouterLinkActive,
-        RouterOutlet,
-        FormsModule,
-        ReactiveFormsModule,
-        AngularMaterialModule,
-        MatProgressBarModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    RouterLink,
+    RouterLinkActive,
+    RouterOutlet,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularMaterialModule,
+    MatProgressBarModule,
+    CdkDrag,
+    CdkDragHandle
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

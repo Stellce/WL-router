@@ -15,7 +15,7 @@ button {
   width: 200px !important;
   height: 61px !important;
   align-self: center;
-  border-radius: 13px;
+  border-radius: 1vw;
 }
 
 p {
@@ -39,7 +39,7 @@ p {
 }
 
 mat-card {
-  width: 882px;
+  width: 90%;
   border-radius: 30px;
   margin: 25px auto;
   background-color: rgb(92, 0, 136);
@@ -49,6 +49,7 @@ mat-card {
 mat-card-content {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 /*# sourceMappingURL=shared.css.map */

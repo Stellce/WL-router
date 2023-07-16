@@ -1,22 +1,38 @@
 
+
 p {
   font-family: 'Inter', sans-serif;
   font-style: italic;
   font-size: 14pt;
   color: white;
-  margin: 22px auto;
+  margin: 20px auto;
   text-align: center;
 }
-
-.earth-div {
-  width: 102px;
-  height: 120px;
-  position: relative;
+.option-container {
+  //max-width: 110px;
+  //max-height: 100px;
+  //width: 14vw;
+  //height: 14vw;
   margin: 30px;
+}
 
+.earth-wrap-div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  //max-width: 100px;
+  max-height: 100px;
+  //width: 10vw;
+  height: 10vw;
+  #earth {
+    width: inherit;
+    height: inherit;
+    max-width: inherit;
+    max-height: inherit;
+  }
   #x {
-    height: 42px;
-    width: 42px;
+    height: 40%;
+    width: 40%;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -24,40 +40,73 @@ p {
 }
 
 .map-line{
-  width: 170px;
+  width: 10vw;
   height: 3px;
   background-color: gray;
   margin-top: 100px;
 }
 
 .router-div {
-  width: 144px;
-  height: 106px;
+  img {
+    //width: 15vw;
+    height: 12vw;
+    max-width: 150px;
+    max-height: 100px;
+  }
   margin: 30px;
 }
 
 .client-div {
-  width: 150px;
-  height: 110px;
+  img {
+    //width: 15vw;
+    height: 12vw;
+    max-width: 150px;
+    max-height: 100px;
+  }
   margin: 30px;
 }
+
+
 
 .wired-clients-div {
   height: 200px;
-  width: 210px;
-  margin: 30px;
+  //width: 210px;
+  margin: 1rem;
   cursor: pointer;
 }
 
-.wired-clients-div :hover {
+.wired-clients-div img {
+  width: 200px;
+}
+
+.wan-div {
+  width: 100px;
+  height: 200px;
+  padding: 40px 50px;
+}
+
+.wireless-div {
+  width: 100px;
+  height: 200px;
+  padding: 40px;
+}
+
+.wireless-clients-div {
+  width: 100px;
+  height: 200px;
+  padding: 30px;
+}
+
+.wired-clients-div :hover,
+.wan-div :hover,
+.wireless-div :hover,
+.wireless-clients-div :hover {
   filter: drop-shadow(0 0 0.75rem #d9d9d9);
 }
 
 .inner-window {
-  width: 500px;
   height: 3vw !important;
   background: #5c0091;
-  display: none;
   position: fixed;
   border-radius: 13px;
   z-index: 999;
@@ -75,12 +124,14 @@ p {
 .move {
   height: 100%;
   width: 100%;
+  cursor: grab;
 }
 .x {
   height: 100%;
   aspect-ratio: 1/1;
   background: red;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .inner-window-content {
@@ -96,27 +147,51 @@ mat-table {
   background: inherit;
 }
 
-td > * {
-  border-radius: 13px;
-  align-content: center;
-  display: flex; align-items: center; height: inherit;
+th mat-text-column{
+  background: #2a2a2a;
 }
 
-.wan-div {
-  width: 100px;
-  height: 200px;
-  margin: 40px 50px;
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: auto;
 }
 
-.wireless-div {
-  width: 100px;
-  height: 200px;
-  margin: 40px;
-}
-
-.wireless-clients-div {
-  width: 100px;
-  height: 200px;
+li {
+  display: flex;
+  justify-content: space-between;
+  //width: 700px;
   margin: 30px;
 }
 
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 23px;
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+  background: #46006c;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1000px) {
+  .map-line {
+    display: none;
+  }
+
+  .option-container {
+    margin: 3vw;
+  }
+  p {
+    margin: 2vw auto;
+  }
+}
+
+//.fst-tab {
+//  margin: 20px;
+//  padding: 0;
+//  p {
+//    margin: 20px 0 10px 0;
+//  }
+//}

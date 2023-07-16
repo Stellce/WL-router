@@ -1,9 +1,7 @@
 <mat-card id="loginCard">
-  <form (submit)="onSubmit(loginForm)" #loginForm="ngForm">
+  <form (keydown.enter)="onSubmit(loginForm)" (submit)="onSubmit(loginForm)" #loginForm="ngForm">
     <span id="greet">
-      <b>
-        Log in
-      </b>
+      <b>Log in</b>
     </span>
       <mat-form-field>
         <input

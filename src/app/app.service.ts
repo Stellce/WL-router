@@ -20,7 +20,8 @@ export class AppService {
     return this.authStatusListener.asObservable();
   }
   login() {
-    this.router.navigate(['/quick-setup']);
+    // this.router.navigate(['/quick-setup']);
+    this.router.navigate(['/basic']);
   }
   logout() {
     this.authStatusListener.next(false);

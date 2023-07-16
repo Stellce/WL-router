@@ -1,19 +1,20 @@
 <mat-card id="outer-card">
   <mat-card>
-    <div class="check"></div>
     <mat-card-content >
-      <div class="earth-div">
-        <img [src]="earthPath" alt="Internet" id="earth" />
-        <img [src]="xPath" alt="Disconnected" id="x" *ngIf="disconnected"/>
+      <div class="option-container">
+        <div class="earth-wrap-div">
+          <img [src]="earthPath" alt="Internet" id="earth" />
+          <img [src]="xPath" alt="Disconnected" id="x" *ngIf="disconnected"/>
+        </div>
         <p>Internet</p>
       </div>
       <div class="map-line"></div>
-      <div class="router-div">
+      <div class="router-div option-container">
         <img [src]="routerPath" alt="Router" id="router" />
         <p>Router</p>
       </div>
       <div class="map-line"></div>
-      <div class="client-div">
+      <div class="client-div option-container">
         <img [src]="clientPath" alt="Client" id="client" />
         <p>Client</p>
       </div>
@@ -22,13 +23,14 @@
   <mat-card>
     <mat-card-content>
 
-      <div class="wired-clients-div" (click)="onShowWired()">
+      <div class="wired-clients-div" (click)="divsDisplay['wired-clients-div'] = !divsDisplay['wired-clients-div']">
         <img [src]="wiredClientsPath" alt="wiredClients" />
         <p>Wired Clients</p>
       </div>
-      <div class="inner-window">
-        <div class="inner-window-header"><div class="move"></div><div class="x" (click)="onCloseInner()"></div></div>
+      <div class="inner-window" *ngIf="divsDisplay['wired-clients-div']" cdkDrag>
+        <div class="inner-window-header"><div class="move" cdkDragHandle></div><div class="x" (click)="divsDisplay['wired-clients-div'] = !divsDisplay['wired-clients-div']"></div></div>
         <div class="inner-window-content">
+          <h2>Wired Clients</h2>
           <mat-table [dataSource]="wiredList">
 <!--            <ng-container *ngFor="let colName of displayedWiredColumns" matColumnDef="{{colName}}">-->
 <!--              <th mat-header-cell *matHeaderCellDef>{{colName}}</th>-->
@@ -57,18 +59,87 @@
         </div>
       </div>
 
-      <div class="wan-div">
+      <div class="wan-div" (click)="divsDisplay['wan-div'] = !divsDisplay['wan-div']">
         <img [src]="wanPath" alt="wan">
         <p>WAN</p>
       </div>
-      <div class="wireless-div">
+
+      <div class="inner-window" *ngIf="divsDisplay['wan-div']" cdkDrag>
+        <div class="inner-window-header">
+          <div class="move" cdkDragHandle></div>
+          <div class="x" (click)="divsDisplay['wan-div'] = !divsDisplay['wan-div']"></div>
+        </div>
+        <div class="inner-window-content">
+          <h2>Internet Information</h2>
+          <mat-divider></mat-divider>
+          <ul>
+            <li *ngFor="let el of wan">
+              <span>{{el.name}}: </span> <span>{{el.value}}</span>
+            </li>
+            <mat-divider></mat-divider>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wireless-div" (click)="divsDisplay['wireless-div'] = !divsDisplay['wireless-div']">
         <img [src]="wirelessPath" alt="wireless" />
         <p>Wireless</p>
       </div>
-      <div class="wireless-clients-div">
+
+      <div class="inner-window" *ngIf="divsDisplay['wireless-div']" cdkDrag>
+        <div class="inner-window-header">
+          <div class="move" cdkDragHandle></div>
+          <div class="x" (click)="divsDisplay['wireless-div'] = !divsDisplay['wireless-div']"></div>
+        </div>
+        <div class="inner-window-content">
+          <h2>Wireless 2.4GHz</h2>
+          <mat-divider></mat-divider>
+          <ul>
+            <li *ngFor="let el of wireless24GHZ">
+              <span>{{el.name}}: </span> <span>{{el.value}}</span>
+            </li>
+            <mat-divider></mat-divider>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wireless-clients-div" (click)="divsDisplay['wireless-clients-div'] = !divsDisplay['wireless-clients-div']">
         <img [src]="wirelessClientsPath" alt="wirelessClients">
         <p>Wireless Clients</p>
       </div>
+
+      <div class="inner-window" *ngIf="divsDisplay['wireless-clients-div']" cdkDrag>
+        <div class="inner-window-header"><div class="move" cdkDragHandle></div><div class="x" (click)="divsDisplay['wireless-clients-div'] = !divsDisplay['wireless-clients-div']"></div></div>
+        <div class="inner-window-content">
+          <h2>WIreless Clients</h2>
+          <mat-table [dataSource]="wirelessList">
+            <!--            <ng-container *ngFor="let colName of displayedWiredColumns" matColumnDef="{{colName}}">-->
+            <!--              <th mat-header-cell *matHeaderCellDef>{{colName}}</th>-->
+            <!--              <td mat-cell *matCellDef="let element">{{element[colName]}}</td>-->
+            <!--            </ng-container>-->
+            <ng-container matColumnDef="ID">
+              <th mat-header-cell *matHeaderCellDef>ID</th>
+              <td mat-cell *matCellDef="let element">{{element.ID}}</td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef>name</th>
+              <td mat-cell *matCellDef="let element">{{element.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="IP">
+              <th mat-header-cell *matHeaderCellDef>IP</th>
+              <td mat-cell *matCellDef="let element">{{element.IP}}</td>
+            </ng-container>
+            <ng-container matColumnDef="MAC">
+              <th mat-header-cell *matHeaderCellDef>MAC</th>
+              <td mat-cell *matCellDef="let element">{{element.MAC}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedWiredColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedWiredColumns;"></tr>
+          </mat-table>
+        </div>
+      </div>
+
     </mat-card-content>
   </mat-card>
 </mat-card>

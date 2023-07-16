@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {AppService} from "../app.service";
 
@@ -7,8 +7,9 @@ import {AppService} from "../app.service";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss', '../shared/shared.scss']
 })
-export class LoginComponent {
+export class LoginComponent{
   constructor(private appService: AppService) {}
+
   onSubmit(form: NgForm) {
     console.log(form);
     this.appService.setAuth(true);

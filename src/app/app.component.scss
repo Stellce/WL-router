@@ -6,3 +6,7 @@ app-header{
   flex-direction: column;
 }
 
+app-header, main {
+  user-select: text;
+}
+

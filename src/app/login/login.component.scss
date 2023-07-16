@@ -2,17 +2,19 @@
   position: relative;
   margin: 5rem auto;
   width: 75vw;
+  max-width: 650px;
   aspect-ratio: 2/1;
-  border-radius: 30px;
-  padding: 4vw 0;
+  border-radius: 3vw;
+  padding: 4vh 0;
   background-color: rgba(92, 0, 136, 1);
   box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 #greet {
-  line-height: 7vw;
-  font-size: 5vw;
+  line-height: 7vh;
+  font-size: 5vh;
   font-style: normal;
-  letter-spacing: 1vw;
+  letter-spacing: .1rem;
 }
 form {
   margin: auto;
@@ -20,17 +22,19 @@ form {
   flex-direction: column;
 }
 
-mat-form-field {
-  height: 7vw !important;
-  width: 50vw;
-  font-size: 3vw;
-}
+//mat-form-field {
+//  height: 7vh !important;
+//  width: 50vw;
+//  max-width: 500px;
+//  font-size: 3vh;
+//}
 
 #Submit {
   width: 50vw !important;
-  height: 5vw !important;
+  max-width: 500px;
+  height: 5vh !important;
   padding: 10px;
-  font-size: 3vw;
+  font-size: 3vh;
   font-style: normal;
   font-weight: 900;
 }
