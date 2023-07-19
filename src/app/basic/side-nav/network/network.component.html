@@ -1,21 +1,23 @@
 <mat-card id="outer-card">
   <mat-card>
     <mat-card-content >
-      <div class="option-container">
-        <div class="earth-wrap-div">
+      <div class="option-container tab1">
+        <div class="earth-img-wrap">
           <img [src]="earthPath" alt="Internet" id="earth" />
           <img [src]="xPath" alt="Disconnected" id="x" *ngIf="disconnected"/>
         </div>
         <p>Internet</p>
       </div>
-      <div class="map-line"></div>
-      <div class="router-div option-container">
-        <img [src]="routerPath" alt="Router" id="router" />
+      <div class="map-line-wrap"><div class="map-line"></div></div>
+      <div class="router-div option-container tab1">
+          <img [src]="routerPath" alt="Router" id="router" />
         <p>Router</p>
       </div>
-      <div class="map-line"></div>
-      <div class="client-div option-container">
-        <img [src]="clientPath" alt="Client" id="client" />
+      <div class="map-line-wrap"><div class="map-line"></div></div>
+      <div class="client-div option-container tab1">
+        <div class="client-img-wrap">
+          <img [src]="clientPath" alt="Client" id="client" />
+        </div>
         <p>Client</p>
       </div>
     </mat-card-content>
@@ -23,7 +25,7 @@
   <mat-card>
     <mat-card-content>
 
-      <div class="wired-clients-div" (click)="divsDisplay['wired-clients-div'] = !divsDisplay['wired-clients-div']">
+      <div class="wired-clients-div option-container tab2" (click)="divsDisplay['wired-clients-div'] = !divsDisplay['wired-clients-div']">
         <img [src]="wiredClientsPath" alt="wiredClients" />
         <p>Wired Clients</p>
       </div>
@@ -59,7 +61,7 @@
         </div>
       </div>
 
-      <div class="wan-div" (click)="divsDisplay['wan-div'] = !divsDisplay['wan-div']">
+      <div class="wan-div option-container tab2" (click)="divsDisplay['wan-div'] = !divsDisplay['wan-div']">
         <img [src]="wanPath" alt="wan">
         <p>WAN</p>
       </div>
@@ -81,7 +83,7 @@
         </div>
       </div>
 
-      <div class="wireless-div" (click)="divsDisplay['wireless-div'] = !divsDisplay['wireless-div']">
+      <div class="wireless-div option-container tab2" (click)="divsDisplay['wireless-div'] = !divsDisplay['wireless-div']">
         <img [src]="wirelessPath" alt="wireless" />
         <p>Wireless</p>
       </div>
@@ -103,7 +105,7 @@
         </div>
       </div>
 
-      <div class="wireless-clients-div" (click)="divsDisplay['wireless-clients-div'] = !divsDisplay['wireless-clients-div']">
+      <div class="wireless-clients-div option-container tab2" (click)="divsDisplay['wireless-clients-div'] = !divsDisplay['wireless-clients-div']">
         <img [src]="wirelessClientsPath" alt="wirelessClients">
         <p>Wireless Clients</p>
       </div>

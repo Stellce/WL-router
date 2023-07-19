@@ -1,7 +1,6 @@
 .side-nav {
   display: flex;
   flex-direction: column;
-  width: 200px;
   margin: 75px 50px;
   gap: 20px;
 }
@@ -15,7 +14,7 @@ button {
   width: 200px !important;
   height: 61px !important;
   align-self: center;
-  border-radius: 1vw;
+  border-radius: 1rem;
 }
 
 p {
@@ -24,16 +23,13 @@ p {
   font-style: normal;
   font-weight: 900;
   font-size: 14pt;
-  //color: white;
   text-align: center;
-  //display: inline-block;
 }
 
 #outer-card {
   max-width: 1024px;
-  width: 75vw;
+  width: 60vw;
   min-width: 350px;
-  //min-height: 812px;
   border-radius: 30px;
   margin: 0 0;
   padding-top: 50px;
@@ -42,7 +38,6 @@ p {
 }
 
 mat-card{
-  //width: 882px;
   width: 90%;
   border-radius: 30px;
   margin: 25px auto;
@@ -54,6 +49,20 @@ mat-card-content{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  //margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
+@media only screen and (max-width: 1000px){
+  .side-nav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .side-nav {
+    margin: 3.5vw;
+    button {
+      //max-width: 10vw;
+    }
+  }
+}

@@ -1,34 +1,30 @@
-
-
 p {
   font-family: 'Inter', sans-serif;
   font-style: italic;
   font-size: 14pt;
   color: white;
-  margin: 20px auto;
+  margin: 20px 0;
   text-align: center;
 }
-.option-container {
-  //max-width: 110px;
-  //max-height: 100px;
-  //width: 14vw;
-  //height: 14vw;
-  margin: 30px;
-}
 
-.earth-wrap-div {
-  position: relative;
+.option-container {
   display: flex;
   flex-direction: column;
-  //max-width: 100px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  max-height: 250px;
+}
+
+.option-container img {
+  height: 12vw;
   max-height: 100px;
-  //width: 10vw;
-  height: 10vw;
+}
+
+.earth-img-wrap {
+  position: relative;
   #earth {
-    width: inherit;
-    height: inherit;
-    max-width: inherit;
-    max-height: inherit;
+    max-height: 100px;
   }
   #x {
     height: 40%;
@@ -40,72 +36,40 @@ p {
 }
 
 .map-line{
-  width: 10vw;
+  width: 8vw;
+  max-width: 200px;
   height: 3px;
   background-color: gray;
-  margin-top: 100px;
+  position: relative;
+  top: 40%;
 }
 
-.router-div {
-  img {
-    //width: 15vw;
-    height: 12vw;
-    max-width: 150px;
-    max-height: 100px;
-  }
-  margin: 30px;
+.map-line-wrap {
+  height: 12vw;
+  max-height: 250px;
 }
 
-.client-div {
-  img {
-    //width: 15vw;
-    height: 12vw;
-    max-width: 150px;
-    max-height: 100px;
-  }
-  margin: 30px;
+.router-img-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 100px;
+  height: 12vw;
 }
 
-
-
-.wired-clients-div {
-  height: 200px;
-  //width: 210px;
-  margin: 1rem;
-  cursor: pointer;
-}
-
-.wired-clients-div img {
-  width: 200px;
-}
-
-.wan-div {
-  width: 100px;
-  height: 200px;
-  padding: 40px 50px;
-}
-
-.wireless-div {
-  width: 100px;
-  height: 200px;
-  padding: 40px;
-}
-
-.wireless-clients-div {
-  width: 100px;
-  height: 200px;
-  padding: 30px;
+.wireless-clients-div img{
+  position: relative;
+  left: -5%;
 }
 
 .wired-clients-div :hover,
 .wan-div :hover,
 .wireless-div :hover,
 .wireless-clients-div :hover {
-  filter: drop-shadow(0 0 0.75rem #d9d9d9);
+  filter: drop-shadow(0 0 0.5rem #d9d9d9);
 }
 
 .inner-window {
-  height: 3vw !important;
   background: #5c0091;
   position: fixed;
   border-radius: 13px;
@@ -160,7 +124,6 @@ ul {
 li {
   display: flex;
   justify-content: space-between;
-  //width: 700px;
   margin: 30px;
 }
 
@@ -175,23 +138,27 @@ h2 {
   font-weight: bold;
 }
 
+.wireless-clients-div {
+  max-width: 100px;
+}
+
 @media only screen and (max-width: 1000px) {
+  .map-line-wrap {
+    display: none;
+  }
   .map-line {
     display: none;
   }
-
-  .option-container {
-    margin: 3vw;
-  }
   p {
-    margin: 2vw auto;
+    margin: 2vw 0;
   }
-}
+  .tab1 {
+    width: 30%;
+    max-width: 30%;
+  }
+  .tab2 {
+    width: 50%;
+    max-width: 50%;
+  }
 
-//.fst-tab {
-//  margin: 20px;
-//  padding: 0;
-//  p {
-//    margin: 20px 0 10px 0;
-//  }
-//}
+}

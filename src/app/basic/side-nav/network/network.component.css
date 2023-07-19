@@ -3,28 +3,31 @@ p {
   font-style: italic;
   font-size: 14pt;
   color: white;
-  margin: 20px auto;
+  margin: 20px 0;
   text-align: center;
 }
 
 .option-container {
-  margin: 30px;
-}
-
-.earth-wrap-div {
-  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  max-height: 250px;
+}
+
+.option-container img {
+  height: 12vw;
   max-height: 100px;
-  height: 10vw;
 }
-.earth-wrap-div #earth {
-  width: inherit;
-  height: inherit;
-  max-width: inherit;
-  max-height: inherit;
+
+.earth-img-wrap {
+  position: relative;
 }
-.earth-wrap-div #x {
+.earth-img-wrap #earth {
+  max-height: 100px;
+}
+.earth-img-wrap #x {
   height: 40%;
   width: 40%;
   position: absolute;
@@ -33,67 +36,40 @@ p {
 }
 
 .map-line {
-  width: 10vw;
+  width: 8vw;
+  max-width: 200px;
   height: 3px;
   background-color: gray;
-  margin-top: 100px;
+  position: relative;
+  top: 40%;
 }
 
-.router-div {
-  margin: 30px;
-}
-.router-div img {
+.map-line-wrap {
   height: 12vw;
-  max-width: 150px;
-  max-height: 100px;
+  max-height: 250px;
 }
 
-.client-div {
-  margin: 30px;
-}
-.client-div img {
+.router-img-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 100px;
   height: 12vw;
-  max-width: 150px;
-  max-height: 100px;
 }
 
-.wired-clients-div {
-  height: 200px;
-  margin: 1rem;
-  cursor: pointer;
-}
-
-.wired-clients-div img {
-  width: 200px;
-}
-
-.wan-div {
-  width: 100px;
-  height: 200px;
-  padding: 40px 50px;
-}
-
-.wireless-div {
-  width: 100px;
-  height: 200px;
-  padding: 40px;
-}
-
-.wireless-clients-div {
-  width: 100px;
-  height: 200px;
-  padding: 30px;
+.wireless-clients-div img {
+  position: relative;
+  left: -5%;
 }
 
 .wired-clients-div :hover,
 .wan-div :hover,
 .wireless-div :hover,
 .wireless-clients-div :hover {
-  filter: drop-shadow(0 0 0.75rem #d9d9d9);
+  filter: drop-shadow(0 0 0.5rem #d9d9d9);
 }
 
 .inner-window {
-  height: 3vw !important;
   background: #5c0091;
   position: fixed;
   border-radius: 13px;
@@ -164,15 +140,27 @@ h2 {
   font-weight: bold;
 }
 
+.wireless-clients-div {
+  max-width: 100px;
+}
+
 @media only screen and (max-width: 1000px) {
+  .map-line-wrap {
+    display: none;
+  }
   .map-line {
     display: none;
   }
-  .option-container {
-    margin: 3vw;
-  }
   p {
-    margin: 2vw auto;
+    margin: 2vw 0;
+  }
+  .tab1 {
+    width: 30%;
+    max-width: 30%;
+  }
+  .tab2 {
+    width: 50%;
+    max-width: 50%;
   }
 }
 
