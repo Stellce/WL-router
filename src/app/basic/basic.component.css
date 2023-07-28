@@ -1,7 +1,7 @@
 .outer-basic {
   display: flex;
   flex-direction: column;
-  margin-left: -300px;
+  margin-left: -280px;
 }
 
 .basic {
@@ -12,7 +12,7 @@
 
 @media only screen and (max-width: 1600px) {
   .outer-basic {
-    margin-left: -17vw;
+    margin-left: -20vw;
   }
 }
 @media only screen and (max-width: 1000px) {

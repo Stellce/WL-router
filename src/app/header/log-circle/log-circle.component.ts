@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AppService} from "../../app.service";
 import {MatBottomSheetRef} from "@angular/material/bottom-sheet";
 
 @Component({
@@ -7,10 +8,14 @@ import {MatBottomSheetRef} from "@angular/material/bottom-sheet";
   styleUrls: ['./log-circle.component.scss']
 })
 export class LogCircleComponent {
-  constructor(private _bottomSheetRef: MatBottomSheetRef<LogCircleComponent>) {}
+  constructor(private appService: AppService, private sheet: MatBottomSheetRef<LogCircleComponent>) {}
+  onLogout() {
+    this.appService.logout();
+    this.sheet.dismiss();
+  }
 
-  openLink(event: MouseEvent) {
-    this._bottomSheetRef.dismiss();
-    event.preventDefault();
+  onRestart() {
+    this.appService.restart();
+    this.sheet.dismiss();
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Subject} from "rxjs";
 import {Router} from "@angular/router";
+import {BreakpointObserver} from "@angular/cdk/layout";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,9 @@ import {Router} from "@angular/router";
 export class AppService {
   private isAuth: boolean = false;
   private authStatusListener = new Subject<boolean>();
-  constructor(private router: Router) {}
+  isSmallSceen = this.media.isMatched('(max-width: 1000px)');
+
+  constructor(private router: Router, public media: BreakpointObserver) {}
   setAuth(change: boolean) {
     this.isAuth = change;
     this.authStatusListener.next(change);
@@ -21,14 +24,13 @@ export class AppService {
   }
   login() {
     // this.router.navigate(['/quick-setup']);
-    this.router.navigate(['/basic']);
+    this.router.navigate(['/basic/internet']);
   }
   logout() {
     this.authStatusListener.next(false);
     this.router.navigate(['/']);
   }
-  reboot() {
-    this.authStatusListener.next(false);
-    this.router.navigate(['/']);
+  restart() {
+    this.router.navigate(['/reboot']);
   }
 }

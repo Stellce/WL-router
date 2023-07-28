@@ -1,4 +1,4 @@
-<mat-card id="loginCard">
+<mat-card id="login-card">
   <form (keydown.enter)="onSubmit(loginForm)" (submit)="onSubmit(loginForm)" #loginForm="ngForm">
     <span id="greet">
       <b>Log in</b>
@@ -21,6 +21,8 @@
           ngModel
           required/>
       </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" id="Submit">Submit</button>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" id="Submit">Submit</button>
+    </mat-card-actions>
   </form>
 </mat-card>

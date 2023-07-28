@@ -12,6 +12,6 @@ export class RebootComponent{
   reboot = false;
   onReboot() {
     this.reboot = true;
-    setTimeout(() => this.appService.reboot(), 5000);
+    setTimeout(() => this.appService.restart(), 5000);
   }
 }

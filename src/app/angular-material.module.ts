@@ -12,6 +12,7 @@ import {MatStepperModule} from "@angular/material/stepper";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatListModule} from "@angular/material/list";
+import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
 
 @NgModule({
   exports: [
@@ -27,7 +28,8 @@ import {MatListModule} from "@angular/material/list";
     MatStepperModule,
     MatRadioModule,
     MatAutocompleteModule,
-    MatListModule
+    MatListModule,
+    MatBottomSheetModule
   ]
 })
  export class AngularMaterialModule {}

@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {LayoutModule} from "@angular/cdk/layout";
 
 import {AppRoutingModule} from "./app-routing.module";
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
@@ -25,6 +26,8 @@ import { RebootComponent } from './reboot/reboot.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { LogCircleComponent } from './header/log-circle/log-circle.component';
 import {CdkDrag, CdkDragHandle} from "@angular/cdk/drag-drop";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -43,7 +46,7 @@ import {CdkDrag, CdkDragHandle} from "@angular/cdk/drag-drop";
     MacCloneComponent,
     LoginComponent,
     RebootComponent,
-    // LogCircleComponent
+    LogCircleComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,10 @@ import {CdkDrag, CdkDragHandle} from "@angular/cdk/drag-drop";
     AngularMaterialModule,
     MatProgressBarModule,
     CdkDrag,
-    CdkDragHandle
+    CdkDragHandle,
+    LayoutModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

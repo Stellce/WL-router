@@ -1,11 +1,26 @@
 header{
   display: flex;
-  width: 80%;
-  //height: 100px;
+  //width: 80%;
+  max-width: 1300px;
   flex-direction: row;
   justify-content: center;
   margin: 0 auto -60px;
   z-index: 1;
+}
+
+.mat-mdc-menu-panel.basicMenu {
+  width: 200px;
+  max-width: 200px;
+  padding: 0;
+  background: #2d0046;
+}
+
+.mat-expansion-panel-body {
+  background: blue;
+}
+
+mat-expansion-panel-header {
+  background: red;
 }
 
 .logo{
@@ -32,7 +47,6 @@ button {
   align-items: center;
   flex-direction: column;
   width: 20%;
-  //max-width: 200px;
   margin: 0 1%;
   justify-content: center;
 }
@@ -46,7 +60,7 @@ button {
   max-width: 150px;
 }
 
-#logCircle {
+#log-circle {
   display: none;
 }
 
@@ -62,26 +76,35 @@ button {
     min-width: 100px;
     font-size: 18px !important;
   }
-  header {
-    width: 100vw;
-  }
 
   #inline-buttons {
     display: none;
   }
 
-  #logCircle {
+  #log-circle {
     display: flex;
-    position: absolute;
-    right: 10vw;
-    bottom: 10vw;
-    height: 15vw;
-    width: 15vw;
+    position: fixed;
+    right: 5vw;
+    bottom: 5vw;
+    height: 60px;
+    width: 60px;
     border-radius: 50px;
     background-color: #8a25ff;
     z-index: 2;
   }
-
+  #log-circle-icon {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+    font-size: 25px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: calc(50% - 12.5px);
+    top: calc(50% - 12.5px);
+  }
 }
 
 

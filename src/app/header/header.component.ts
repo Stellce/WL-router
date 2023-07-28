@@ -12,13 +12,12 @@ import {Router} from "@angular/router";
 })
 
 export class HeaderComponent implements OnInit, OnDestroy{
-  constructor(private appService: AppService, private router: Router) {}
-  //, private _bottomSheet: MatBottomSheet
-  userIsAuthenticated: boolean = false;
+  constructor(private appService: AppService, private router: Router, private _bottomSheet: MatBottomSheet) {}
   private authListenerSubs: Subscription;
-  loggedIn: boolean;
+  userIsAuthenticated: boolean = false;
+  loggedIn: boolean = false;
+  isSmallScreen: boolean = this.appService.isSmallSceen;
   ngOnInit() {
-    console.log('sda');
     this.loggedIn = this.router.url !== '/login';
     this.authListenerSubs =this.appService
       .getAuthStatusListener()
@@ -30,9 +29,9 @@ export class HeaderComponent implements OnInit, OnDestroy{
     this.appService.logout();
   }
 
-  // openBottomSheet(): void {
-  //   this._bottomSheet.open(LogCircleComponent);
-  // }
+  openBottomSheet(): void {
+    this._bottomSheet.open(LogCircleComponent);
+  }
 
   ngOnDestroy() {
     this.authListenerSubs.unsubscribe();
