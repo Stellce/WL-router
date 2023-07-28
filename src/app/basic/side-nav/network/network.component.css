@@ -117,18 +117,6 @@ th mat-text-column {
   background: #2a2a2a;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: auto;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  margin: 30px;
-}
-
 h2 {
   font-family: "Inter", sans-serif;
   font-size: 23px;

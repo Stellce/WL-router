@@ -1,24 +1,3 @@
-.outer-basic {
-  display: flex;
-  flex-direction: column;
-  margin-left: -280px;
-}
 
-.basic {
-  display: flex;
-  margin: 0 auto;
-  flex-direction: row;
-}
-
-@media only screen and (max-width: 1600px) {
-  .outer-basic {
-    margin-left: -20vw;
-  }
-}
-@media only screen and (max-width: 1000px) {
-  .outer-basic {
-    margin: 0;
-  }
-}
 
 /*# sourceMappingURL=basic.component.css.map */

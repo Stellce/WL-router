@@ -1,7 +1,7 @@
-<mat-card>
+<mat-card id="rebootCard">
   <div class="askReboot" *ngIf="!reboot">
     <p>Reboot router now?</p>
-    <button mat-raised-button color="accent" (click)="onReboot()">Yes</button>
+    <button mat-raised-button id="rebootBtn" color="accent" (click)="onReboot()">Yes</button>
   </div>
 
   <div class="reboot" *ngIf="reboot">

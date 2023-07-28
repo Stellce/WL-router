@@ -6,7 +6,10 @@
     <ul *ngFor="let conf of cfg">
       <h2>{{conf.name}}</h2>
       <li *ngFor="let prop of conf.value">
-        <p>{{prop.name}}:</p> <p>{{prop.value}}</p> <p *ngIf="prop.name === 'IP Address'"> {{IPv4ConType}}</p> <button mat-raised-button color="primary" *ngIf="prop.name === 'Default Gateway'" (click)="onIPRelease">Release</button>
+        <p>{{prop.name}}:</p>
+        <p *ngIf="prop.name === 'IP Address'">{{IPv4ConType}}</p>
+        <button id="releaseBtn" mat-raised-button color="primary" *ngIf="prop.name === 'Default Gateway'" (click)="onIPRelease">Release</button>
+        <p>{{prop.value}}</p>
       </li>
       <mat-divider></mat-divider>
     </ul>

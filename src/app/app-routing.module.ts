@@ -10,7 +10,6 @@ import {NetworkComponent} from "./basic/side-nav/network/network.component";
 import {WirelessComponent} from "./basic/side-nav/wireless/wireless.component";
 import {GuestNetworkComponent} from "./basic/side-nav/guest-network/guest-network.component";
 import {StatusComponent} from "./advanced/side-nav/status/status.component";
-import {WanComponent} from "./advanced/side-nav/network/wan/wan.component";
 import {MacCloneComponent} from "./advanced/side-nav/network/mac-clone/mac-clone.component";
 import {LoginComponent} from "./login/login.component";
 import {RebootComponent} from "./reboot/reboot.component";
@@ -29,7 +28,7 @@ const routes: Routes = [
   {path: 'advanced', component: AdvancedComponent, canActivate: [authGuard],
     children: [
       {path: 'status', component: StatusComponent},
-      {path: 'wan', component: WanComponent},
+      {path: 'wan', component: InternetComponent},
       {path: 'mac-clone', component: MacCloneComponent},
       {path: '', redirectTo: 'status', pathMatch: "full"}
     ]

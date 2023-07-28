@@ -4,7 +4,7 @@ import {AppService} from "../app.service";
 @Component({
   selector: 'app-reboot',
   templateUrl: './reboot.component.html',
-  styleUrls: ['./reboot.component.scss']
+  styleUrls: ['./reboot.component.scss', "../shared/shared.scss"]
 })
 export class RebootComponent{
   constructor(private appService: AppService) {

@@ -1,17 +1,5 @@
-.outer-advanced {
-  display: flex;
-  flex-direction: column;
-  margin-left: -300px;
-}
-
-.advanced{
-  display: flex;
-  margin: 0 auto;
-  flex-direction: row;
-}
-
 mat-expansion-panel {
-  width: 200px;
+  //width: 40vw;
   border-radius: 13px;
   background-color: #260038;
   align-self: center;

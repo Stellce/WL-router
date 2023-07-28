@@ -1,45 +1,36 @@
-mat-card{
-  width: 882px;
-  border-radius: 30px;
-  margin: 25px auto;
-  background-color: rgba(92, 0, 136, 1);
+#rebootCard{
+  max-width: 882px;
+  width: 80vw;
   box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
-}
-mat-card {
-  height: 500px;
-  position: absolute;
-  left: calc(50% - 441px);
-  top: calc(50% - 350px);
+
+  margin: 50px auto;
+  max-height: 500px;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #2d0046;
 }
+
 .askReboot, .reboot {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 250px;
-  width: 575px;
+  height: 60%;
+  width: 100%;
   flex-direction: column;
 }
-p{
+.askReboot p, .reboot p{
   text-align: center;
-  font-size: 64px;
+  font-size: 45px;
   font-weight: bold;
   font-style: italic;
+  line-height: 75px;
 }
 mat-progress-bar {
   width: 100%;
 }
-button {
-  font-family: 'Inter', sans-serif;
-  font-style: italic;
-  font-size: 23px;
-  font-weight: bold;
-  color: white;
-  width: 200px !important;
-  height: 61px !important;
-  align-self: center;
-  border-radius: 13px;
+
+#rebootBtn {
+  height: 60px;
 }
