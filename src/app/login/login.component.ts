@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {Component} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {AppService} from "../app.service";
 
@@ -11,7 +11,6 @@ export class LoginComponent{
   constructor(private appService: AppService) {}
 
   onSubmit(form: NgForm) {
-    console.log(form);
     this.appService.setAuth(true);
     this.appService.login();
   }

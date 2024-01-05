@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, HostListener, OnInit} from "@angular/core";
 import {FormBuilder, Validators} from "@angular/forms";
 import timezones from '../../assets/json/timezones.json';
 import {map, Observable, startWith} from "rxjs";
@@ -6,7 +6,7 @@ import {map, Observable, startWith} from "rxjs";
 @Component({
   selector: `app-quick-setup`,
   templateUrl: `./quick-setup.component.html`,
-  styleUrls: [`./quick-setup.component.scss`, `../shared/shared.scss`]
+  styleUrls: [`../shared/shared.scss`, `./quick-setup.component.scss`]
 })
 export class QuickSetupComponent implements OnInit{
   orientation: 'vertical' | 'horizontal' = 'vertical';
@@ -42,12 +42,9 @@ export class QuickSetupComponent implements OnInit{
     ssid: "TP-LINK_7B00",
     password: "tplinkpassword"
   }
-  onTest() {
-    console.log(timezones[0].text);
-  }
-  timezones = timezones;
   filteredTimeZones: Observable<string[]> | undefined;
   TimeZoneOptions: string[] = timezones.map(el => el.text);
+  innerWidth: number;
   private _filter(value: any): string[] {
     const filterValue = value.toLowerCase();
     return this.TimeZoneOptions.filter(TimeZoneOptions => TimeZoneOptions.toLowerCase().includes(filterValue));
@@ -64,6 +61,10 @@ export class QuickSetupComponent implements OnInit{
       map(value => this._filter(value || ''))
     );
     this.setDefaultsForm();
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.innerWidth = window.innerWidth;
   }
   setDefaultsForm() {
     this.wirelessSettingsGroup.get('isSignal24')?.setValue(this.wirelessSettings.isSignal24);

@@ -1,12 +1,10 @@
 #outer-card {
-  //width: 80% !important;
-  //margin: 1rem auto !important;
   margin: 0 auto !important;
 }
 
 button{
   height: 50px !important;
-  font-size: 16pt;
+  font-size: 16px;
 }
 
 p {
@@ -74,7 +72,7 @@ span {
     min-width: 280px;
   }
   .mat-stepper-vertical {
-    min-width: calc(150px - 32px);
+    min-width: 118px;
     width: 100%;
     border-radius: 20px;
     background-color: #3b0057;
@@ -82,7 +80,6 @@ span {
 
   button {
     min-height: 25px !important;
-    max-width: 100px !important;
   }
   ul{
     padding: 0;
@@ -91,12 +88,7 @@ span {
   li {
     margin: 0 auto;
   }
-
-}
-
-.mat-stepper-vertical {
-  min-width: calc(150px - 32px);
-  width: 100%;
-  border-radius: 20px;
-  background-color: #3b0057;
+  #outer-card {
+    width: 80vw;
+  }
 }
