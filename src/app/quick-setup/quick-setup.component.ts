@@ -51,11 +51,7 @@ export class QuickSetupComponent implements OnInit{
   }
 
   ngOnInit() {
-    if (window.innerWidth > 1000) {
-      this.orientation = 'horizontal';
-    } else {
-      this.orientation = 'vertical';
-    }
+    this.innerWidth = window.innerWidth;
     this.filteredTimeZones = this.timeZoneGroup.get("timeZone")?.valueChanges.pipe(
       startWith(""),
       map(value => this._filter(value || ''))
