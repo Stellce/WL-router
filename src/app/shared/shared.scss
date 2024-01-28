@@ -4,7 +4,7 @@
   margin-left: -280px;
 }
 
-.basic{
+.basic {
   display: flex;
   margin: 0 auto;
   flex-direction: row;
@@ -27,7 +27,7 @@
   min-width: 350px;
   border-radius: 30px;
   margin: 0 0;
-  padding-top: 40px;
+  padding-top: 45px;
   background-color: rgba(92, 0, 136, 1);
   box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
 }
@@ -159,5 +159,8 @@ p {
   }
   .outer-basic {
     margin: 0;
+  }
+  #outer-card {
+    width: 90vw;
   }
 }

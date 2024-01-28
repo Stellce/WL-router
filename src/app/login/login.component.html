@@ -1,23 +1,23 @@
 <mat-card id="login-card">
-  <form (keydown.enter)="onSubmit(loginForm)" (submit)="onSubmit(loginForm)" #loginForm="ngForm">
+  <form (submit)="onSubmit(loginForm)" #loginForm="ngForm">
     <span id="greet">
       <b>Log in</b>
     </span>
       <mat-form-field>
+        <mat-label>Login</mat-label>
         <input
           matInput
           type="user"
           name="user"
-          placeholder="Login"
           ngModel
           required/>
       </mat-form-field>
       <mat-form-field>
+        <mat-label>Password</mat-label>
         <input
           matInput
           type="password"
           name="password"
-          placeholder="Password"
           ngModel
           required/>
       </mat-form-field>

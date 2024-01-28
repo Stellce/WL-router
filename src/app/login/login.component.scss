@@ -4,15 +4,14 @@
   width: 75vw;
   max-width: 650px;
   aspect-ratio: 2/1;
-  border-radius: 4rem;
+  border-radius: 21px;
   padding: 4vh 0;
   background-color: rgba(92, 0, 136, 1);
   box-shadow: 0 4px 35px 40px rgba(0, 0, 0, 0.25);
   text-align: center;
 }
 #greet {
-  line-height: 7vh;
-  font-size: 5vh;
+  font-size: 32px;
   font-style: normal;
   letter-spacing: .1rem;
 }
@@ -21,11 +20,15 @@ form {
   display: flex;
   flex-direction: column;
 }
-
+mat-card-actions {
+  display: flex;
+  flex-direction: column;
+}
 #Submit {
+  min-width: 100px;
   width: 50vw !important;
   max-width: 500px;
-  height: 5vh !important;
+  height: 50px !important;
   padding: 10px;
   font-size: 3vh;
   font-style: normal;
