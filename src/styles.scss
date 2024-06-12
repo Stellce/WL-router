@@ -23,12 +23,26 @@ html, body { height: 100%; }
 
 body {
   background-color: rgba(38, 0, 55, 1);
-  //rgba(55, 0, 81, 1);
   margin: 0;
   font-family: 'Inter', sans-serif;
-  font-style: italic;
   color: white;
   display: block;
 }
 
+.dialog-panel,
+  .mat-mdc-dialog-container,
+  .mdc-dialog__container,
+  .mat-mdc-dialog-surface {
+  background-color: red;
+}
 
+.mat-mdc-menu-panel.mat-mdc-menu-panel {
+  width: 100px;
+  max-width: 100px !important;
+  min-width: 100px !important;
+  padding: 0;
+  background: #2d0046;
+  button {
+    max-width: 100px;
+  }
+}
