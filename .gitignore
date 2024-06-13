@@ -45,3 +45,5 @@ Thumbs.db
 favicon.png
 favicon.ico
 old/
+/firebase-debug.log
+/notes.txt
