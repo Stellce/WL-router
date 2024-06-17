@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Subject} from "rxjs";
+import {BehaviorSubject, Subject} from "rxjs";
 import {Router} from "@angular/router";
 import {BreakpointObserver} from "@angular/cdk/layout";
 
@@ -7,27 +7,28 @@ import {BreakpointObserver} from "@angular/cdk/layout";
   providedIn: 'root'
 })
 export class AppService {
-  private isAuth: boolean = false;
-  private authStatusListener = new Subject<boolean>();
-  isSmallSceen = this.media.isMatched('(max-width: 1000px)');
+  private _isAuth: boolean = false;
+  private _authStatusListener = new BehaviorSubject<boolean>(false);
+  isSmallScreen = this.media.isMatched('(max-width: 1000px)');
 
   constructor(private router: Router, public media: BreakpointObserver) {}
-  setAuth(change: boolean) {
-    this.isAuth = change;
-    this.authStatusListener.next(change);
+  get isAuth() {
+    return this._isAuth;
   }
-  getIsAuth() {
-    return this.isAuth;
+  set isAuth(isAuth: boolean) {
+    this._isAuth = isAuth;
+    this._authStatusListener.next(isAuth);
   }
-  getAuthStatusListener() {
-    return this.authStatusListener.asObservable();
+  get authStatusListener() {
+    return this._authStatusListener.asObservable();
   }
   login() {
+    this.isAuth = true;
     // this.router.navigate(['/quick-setup']);
     this.router.navigate(['/basic/internet']);
   }
   logout() {
-    this.authStatusListener.next(false);
+    this._authStatusListener.next(false);
     this.router.navigate(['/']);
   }
   restart() {

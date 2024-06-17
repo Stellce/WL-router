@@ -3,27 +3,21 @@ import {AppService} from "../app.service";
 import {Subscription} from "rxjs";
 import {LogCircleComponent} from "./log-circle/log-circle.component";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
-import {Router} from "@angular/router";
 
 @Component({
   selector: `app-header`,
   templateUrl: `./header.component.html`,
   styleUrls: [`./header.component.scss`, `../shared/shared.scss`],
 })
-
 export class HeaderComponent implements OnInit, OnDestroy{
-  constructor(private appService: AppService, private router: Router, private _bottomSheet: MatBottomSheet) {}
-  private authListenerSubs: Subscription;
-  userIsAuthenticated: boolean = false;
+  constructor(private appService: AppService, private _bottomSheet: MatBottomSheet) {}
+  private isAuthSub: Subscription;
+  isAuth: boolean = false;
   loggedIn: boolean = false;
-  isSmallScreen: boolean = this.appService.isSmallSceen;
+  isSmallScreen: boolean = this.appService.isSmallScreen;
   ngOnInit() {
-    this.loggedIn = this.router.url !== '/login';
-    this.authListenerSubs =this.appService
-      .getAuthStatusListener()
-      .subscribe(isAuth => {
-        this.userIsAuthenticated = isAuth;
-      })
+    this.isAuthSub = this.appService.authStatusListener
+      .subscribe(isAuth => this.isAuth = isAuth);
   }
   onLogout() {
     this.appService.logout();
@@ -34,6 +28,6 @@ export class HeaderComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy() {
-    this.authListenerSubs.unsubscribe();
+    this.isAuthSub.unsubscribe();
   }
 }

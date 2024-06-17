@@ -7,11 +7,10 @@ import {AppService} from "../app.service";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss', '../shared/shared.scss']
 })
-export class LoginComponent{
+export class LoginComponent {
   constructor(private appService: AppService) {}
 
   onSubmit(form: NgForm) {
-    this.appService.setAuth(true);
     this.appService.login();
   }
 }

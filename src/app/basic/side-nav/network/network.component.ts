@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {wiredList, wirelessList} from "./clientsIP";
 import {ClientsIPInterface} from "./clientsIP-interface";
-import {WindowService} from "../../window.service";
 
 @Component({
   selector: 'app-network',
@@ -45,16 +44,6 @@ export class NetworkComponent {
     'wireless-div': false,
     'wireless-clients-div': false
   };
-
-  constructor(private winService: WindowService) {}
-
-  onShowWindow(winNum: number) {
-    this.winService.showWindow(winNum);
-  }
-
-  // onTrack(winNum: number) {
-  //   this.winService.trackMove(winNum, true);
-  // }
 
   onDrag(showWinNum: number, e: any) {
     const body: HTMLElement = document.getElementsByTagName('body')[0] as HTMLElement;

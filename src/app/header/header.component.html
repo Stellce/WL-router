@@ -1,5 +1,5 @@
 <div class="logo">WL</div>
-<header *ngIf="userIsAuthenticated && loggedIn">
+<header *ngIf="isAuth && loggedIn">
   <button color="primary"
           mat-raised-button
           routerLink="/quick-setup"
