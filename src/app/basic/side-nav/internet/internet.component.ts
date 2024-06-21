@@ -39,7 +39,6 @@ export class InternetComponent {
   }
   onSelect(event: MatSelectChange) {
     this.selected = event.value;
-    // console.log(`Selected option:${event.value}`);
   }
 
   onRelease() {

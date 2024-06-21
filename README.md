@@ -1,4 +1,4 @@
-# Front
+# WL-router
 
 This project was created with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
 

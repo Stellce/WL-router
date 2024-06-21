@@ -8,7 +8,7 @@ import {ClientsIPInterface} from "./clientsIP-interface";
   styleUrls: ['./network.component.scss', '../../../shared/shared.scss']
 })
 export class NetworkComponent {
-  disconnected :boolean = true;
+  disconnected: boolean = true;
   earthPath: string = './assets/images/network-tab1/Earth.svg';
   routerPath: string = './assets/images/network-tab1/Router.svg'
   clientPath: string = './assets/images/network-tab1/Client.svg'
@@ -44,33 +44,4 @@ export class NetworkComponent {
     'wireless-div': false,
     'wireless-clients-div': false
   };
-
-  onDrag(showWinNum: number, e: any) {
-    const body: HTMLElement = document.getElementsByTagName('body')[0] as HTMLElement;
-    let innerWindow = document.getElementsByClassName('inner-window')[showWinNum] as HTMLElement;
-    const moveDiv: HTMLElement = document.getElementsByClassName('move')[showWinNum] as HTMLElement;
-    let pos1X = 0, pos1Y = 0, offsetX = 0, offsetY = 0;
-    // console.log(moveDiv)
-
-    e = e || Event;
-    console.log(e.clientY)
-    body.style.userSelect = 'none'
-    pos1X = e.clientX;
-    pos1Y = e.clientY;
-
-    offsetX = pos1X - innerWindow!.offsetLeft;
-    offsetY = pos1Y - innerWindow!.offsetTop;
-
-    document.onmousemove = (e) => {
-      innerWindow!.style.left = e.clientX - offsetX + 'px';
-      innerWindow!.style.top = e.clientY - offsetY + 'px';
-      // console.log(e.clientX, e.clientY);
-    }
-    document.onmouseup = () => {
-      document.onmousedown = null;
-      document.onmousemove = null;
-      body.style.userSelect = 'text';
-    }
-
-  }
 }

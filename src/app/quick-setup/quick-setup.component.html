@@ -1,6 +1,6 @@
 <mat-card id="outer-card">
   <mat-card-content>
-    <mat-stepper linear="true" [orientation]="innerWidth < 1000 ? 'vertical' : 'horizontal'">
+    <mat-stepper linear="true" [orientation]="window.innerWidth < 1000 ? 'vertical' : 'horizontal'">
       <mat-step [stepControl]="timeZoneGroup" [editable]="isEditable">
         <form [formGroup]="timeZoneGroup">
           <ng-template matStepLabel>Time Zone</ng-template>
@@ -14,7 +14,7 @@
               [matAutocomplete]="auto"
               required
             />
-            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-autocomplete #auto="matAutocomplete">
               <mat-option *ngFor="let timezone of filteredTimeZones | async" [value]="timezone">{{timezone}}</mat-option>
             </mat-autocomplete>
           </mat-form-field>

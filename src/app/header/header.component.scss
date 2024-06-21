@@ -15,14 +15,6 @@ header{
   background: #2d0046;
 }
 
-.mat-expansion-panel-body {
-  background: blue;
-}
-
-mat-expansion-panel-header {
-  background: red;
-}
-
 .logo{
   display: flex;
   position: absolute;
@@ -35,10 +27,6 @@ mat-expansion-panel-header {
   color: rgba(173, 0, 255, 1);
   align-items: center;
   margin: 0 1rem;
-}
-
-button {
-  //margin: 0 1% !important;
 }
 
 #inline-buttons {

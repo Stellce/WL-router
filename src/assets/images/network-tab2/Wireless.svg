@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 27.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#D9D9D9;}
 	.st1{fill:#FFFFFF;filter:url(#Adobe_OpacityMaskFilter);}
-	
+
 		.st2{mask:url(#path-2-inside-1_116_62_00000127039004274343380920000005593053983308787644_);fill:#D9D9D9;stroke:#D9D9D9;stroke-width:52;}
 	.st3{fill:#FFFFFF;filter:url(#Adobe_OpacityMaskFilter_00000115512463049346401620000016351111276931541681_);}
-	
+
 		.st4{mask:url(#path-3-inside-2_116_62_00000111896369963007883390000003512753505307882381_);fill:none;stroke:#D9D9D9;stroke-width:52;}
 </style>
 <circle class="st0" cx="81.6" cy="86.1" r="13.9"/>
@@ -26,7 +25,7 @@
 	c-2.4,5.9-4,12.1-4.7,18.4c-0.5,4.1,2.9,7.5,7.1,7.5l0,0c4.1,0,7.4-3.4,8-7.5c0.6-4.4,1.8-8.6,3.5-12.7c2.7-6.4,6.5-12.2,11.4-17.1
 	s10.7-8.8,17.1-11.4c4.1-1.7,8.4-2.9,12.7-3.5C92.2,45.1,95.5,41.8,95.5,37.7L95.5,37.7z"/>
 <defs>
-	
+
 		<filter id="Adobe_OpacityMaskFilter_00000102509080703869456360000011195854416137665683_" filterUnits="userSpaceOnUse" x="-25.6" y="-25.6" width="139.3" height="139.3">
 		<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
 	</filter>

@@ -2,8 +2,13 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
   "projects": {
-    "front": {
+    "wl-router": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,7 +23,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/front"
+              "base": "dist/wl-router"
             },
             "index": "src/index.html",
             "polyfills": [
@@ -30,7 +35,6 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -57,6 +61,11 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "analyze-bundle": {
+              "sourceMap": true,
+              "outputHashing": "none",
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -65,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "front:build:production"
+              "buildTarget": "wl-router:build:production"
             },
             "development": {
-              "buildTarget": "front:build:development"
+              "buildTarget": "wl-router:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "front:build"
+            "buildTarget": "wl-router:build"
           }
         },
         "test": {
@@ -92,7 +101,6 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []

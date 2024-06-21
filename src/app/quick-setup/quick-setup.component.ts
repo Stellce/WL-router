@@ -1,7 +1,7 @@
 import {Component, HostListener, OnInit} from "@angular/core";
 import {FormBuilder, Validators} from "@angular/forms";
 import timezones from '../../assets/json/timezones.json';
-import {map, Observable, startWith} from "rxjs";
+import {map, Observable} from "rxjs";
 
 @Component({
   selector: `app-quick-setup`,
@@ -9,7 +9,6 @@ import {map, Observable, startWith} from "rxjs";
   styleUrls: [`../shared/shared.scss`, `./quick-setup.component.scss`]
 })
 export class QuickSetupComponent implements OnInit{
-  orientation: 'vertical' | 'horizontal' = 'vertical';
   isEditable: boolean = true;
   constructor(private _formBuilder: FormBuilder) {}
   timeZoneGroup = this._formBuilder.group({
@@ -45,15 +44,13 @@ export class QuickSetupComponent implements OnInit{
   filteredTimeZones: Observable<string[]> | undefined;
   TimeZoneOptions: string[] = timezones.map(el => el.text);
   innerWidth: number;
-  private _filter(value: any): string[] {
+  private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-    return this.TimeZoneOptions.filter(TimeZoneOptions => TimeZoneOptions.toLowerCase().includes(filterValue));
+    return this.TimeZoneOptions.filter(TimeZoneOption => TimeZoneOption.toLowerCase().includes(filterValue));
   }
 
   ngOnInit() {
-    this.innerWidth = window.innerWidth;
     this.filteredTimeZones = this.timeZoneGroup.get("timeZone")?.valueChanges.pipe(
-      startWith(""),
       map(value => this._filter(value || ''))
     );
     this.setDefaultsForm();
@@ -75,4 +72,6 @@ export class QuickSetupComponent implements OnInit{
     console.log(this.timeZoneGroup.value, this.wanConnGroup.value, this.wirelessSettingsGroup.value);
 
   }
+
+  protected readonly window = window;
 }

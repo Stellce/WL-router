@@ -34,10 +34,6 @@
         <div class="inner-window-content">
           <h2>Wired Clients</h2>
           <mat-table [dataSource]="wiredList">
-<!--            <ng-container *ngFor="let colName of displayedWiredColumns" matColumnDef="{{colName}}">-->
-<!--              <th mat-header-cell *matHeaderCellDef>{{colName}}</th>-->
-<!--              <td mat-cell *matCellDef="let element">{{element[colName]}}</td>-->
-<!--            </ng-container>-->
             <ng-container matColumnDef="ID">
               <th mat-header-cell *matHeaderCellDef>ID</th>
               <td mat-cell *matCellDef="let element">{{element.ID}}</td>
@@ -115,10 +111,6 @@
         <div class="inner-window-content">
           <h2>WIreless Clients</h2>
           <mat-table [dataSource]="wirelessList">
-            <!--            <ng-container *ngFor="let colName of displayedWiredColumns" matColumnDef="{{colName}}">-->
-            <!--              <th mat-header-cell *matHeaderCellDef>{{colName}}</th>-->
-            <!--              <td mat-cell *matCellDef="let element">{{element[colName]}}</td>-->
-            <!--            </ng-container>-->
             <ng-container matColumnDef="ID">
               <th mat-header-cell *matHeaderCellDef>ID</th>
               <td mat-cell *matCellDef="let element">{{element.ID}}</td>

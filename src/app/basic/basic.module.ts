@@ -1,28 +1,31 @@
 import {NgModule} from "@angular/core";
 import {BasicComponent} from "./basic.component";
-import {QuickSetupComponent} from "../quick-setup/quick-setup.component";
-import {AdvancedComponent} from "../advanced/advanced.component";
 import {InternetComponent} from "./side-nav/internet/internet.component";
 import {NetworkComponent} from "./side-nav/network/network.component";
 import {WirelessComponent} from "./side-nav/wireless/wireless.component";
 import {GuestNetworkComponent} from "./side-nav/guest-network/guest-network.component";
-import {MatButtonModule} from "@angular/material/button";
+import {MatButton} from "@angular/material/button";
 import {RouterModule, Routes} from "@angular/router";
-import {MatCardModule} from "@angular/material/card";
-import {MatStepperModule} from "@angular/material/stepper";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatAutocompleteModule} from "@angular/material/autocomplete";
-import {MatRadioModule} from "@angular/material/radio";
-import {MatButtonToggleModule} from "@angular/material/button-toggle";
-import {MatExpansionModule} from "@angular/material/expansion";
-import {MatSelectModule} from "@angular/material/select";
-import {MatCheckboxModule} from "@angular/material/checkbox";
-import {MatInputModule} from "@angular/material/input";
-import {MatTableModule} from "@angular/material/table";
-import {MatDividerModule} from "@angular/material/divider";
+import {MatCard, MatCardActions, MatCardContent} from "@angular/material/card";
+import {FormsModule} from "@angular/forms";
+import {MatFormField} from "@angular/material/form-field";
+import {MatButtonToggle, MatButtonToggleGroup} from "@angular/material/button-toggle";
+import {MatExpansionPanel, MatExpansionPanelTitle} from "@angular/material/expansion";
+import {MatOption, MatSelect} from "@angular/material/select";
+import {MatCheckbox} from "@angular/material/checkbox";
+import {MatInput} from "@angular/material/input";
+import {MatDivider} from "@angular/material/divider";
 import {CommonModule} from "@angular/common";
-import {CdkDrag} from "@angular/cdk/drag-drop";
+import {CdkDrag, CdkDragHandle} from "@angular/cdk/drag-drop";
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
+  MatTable
+} from "@angular/material/table";
 
 const routes: Routes = [
   {path: '',
@@ -40,8 +43,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     BasicComponent,
-    QuickSetupComponent,
-    AdvancedComponent,
     InternetComponent,
     NetworkComponent,
     WirelessComponent,
@@ -51,25 +52,38 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
 
-    MatButtonModule,
+    MatButton,
+    MatCard,
+    MatFormField,
 
-    MatCardModule,
-    MatStepperModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatAutocompleteModule,
-    MatRadioModule,
-    MatButtonToggleModule,
+    MatExpansionPanel,
+    MatExpansionPanelTitle,
 
-    MatExpansionModule,
-    MatSelectModule,
+    MatCardContent,
+    MatSelect,
+    MatOption,
+    MatCardActions,
     FormsModule,
-    MatCheckboxModule,
-    MatInputModule,
+    MatCheckbox,
+    MatInput,
 
-    MatTableModule,
-    MatDividerModule,
+    MatDivider,
+    MatButtonToggleGroup,
+    MatButtonToggle,
+    MatDivider,
+
     CdkDrag,
+    CdkDragHandle,
+    MatTable,
+    MatHeaderCell,
+    MatColumnDef,
+    MatCell,
+    MatCellDef,
+    MatHeaderCellDef,
+    MatHeaderRow,
+    MatRow,
+    MatHeaderRowDef,
+    MatRowDef,
   ]
 })
 export class BasicModule {}

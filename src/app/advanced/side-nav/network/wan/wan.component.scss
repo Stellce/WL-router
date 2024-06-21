@@ -13,7 +13,6 @@ p {
   font-style: normal;
   font-size: 14pt;
   color: white;
-  //margin: 22px auto;
   text-align: center;
   display: inline-block;
 }
@@ -29,14 +28,11 @@ mat-card{
 mat-card-content{
   display: flex;
   flex-direction: row;
-  //margin-bottom: 50px;
 }
 
 button{
-  //width: 100px;
   height: 50px !important;
   font-size: 16pt;
-  //margin-top: -10px;
 }
 
 #selector {

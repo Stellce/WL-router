@@ -1,28 +1,18 @@
 @use "@angular/material" as mat;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-
 @import 'theme.scss';
-@import 'm3-theme.scss';
 
 @include mat.core();
 
 $primary: mat.m2-define-palette($md-primary-palette);
 $accent: mat.m2-define-palette($md-accent-palette);
-//
 $theme: mat.m2-define-dark-theme((
   color: (
     primary: $primary,
     accent: $accent,
-  )
+  ),
 ));
-//
-//$theme: mat.define-theme((
-//  color: (
-//    theme-type: dark,
-//    primary: $_palettes
-//  )
-//));
 
 html, body {
   @include mat.all-component-themes($theme);
@@ -37,20 +27,14 @@ body {
   display: block;
 }
 
-.dialog-panel,
-  .mat-mdc-dialog-container,
-  .mdc-dialog__container,
-  .mat-mdc-dialog-surface {
-  background-color: red;
-}
-
 .mat-mdc-menu-panel.mat-mdc-menu-panel {
-  width: 100px;
-  max-width: 100px !important;
-  min-width: 100px !important;
   padding: 0;
   background: #2d0046;
   button {
     max-width: 100px;
+  }
+  .mat-mdc-menu-content {
+    display: flex;
+    flex-direction: column;
   }
 }

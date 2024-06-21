@@ -42,8 +42,13 @@ testem.log
 Thumbs.db
 
 #old images
+old/
 favicon.png
 favicon.ico
-old/
+
+#Firebase
+.firebase/*
+.firebaserc
+firebase.json
 /firebase-debug.log
 /notes.txt

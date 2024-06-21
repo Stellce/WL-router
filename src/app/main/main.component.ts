@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router, RouterOutlet} from "@angular/router";
-import {AppModule} from "../app.module";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-main',

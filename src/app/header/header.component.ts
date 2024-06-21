@@ -10,9 +10,12 @@ import {MatBottomSheet} from "@angular/material/bottom-sheet";
 })
 export class HeaderComponent {
   constructor(private appService: AppService, private _bottomSheet: MatBottomSheet) {}
-  isSmallScreen: boolean = this.appService.isSmallScreen;
   onLogout() {
     this.appService.logout();
+  }
+
+  get isSmallScreen() {
+    return this.appService.media.isMatched('(max-width: 1000px)');
   }
 
   openBottomSheet(): void {

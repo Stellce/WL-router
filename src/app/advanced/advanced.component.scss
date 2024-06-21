@@ -1,5 +1,4 @@
 mat-expansion-panel {
-  //width: 40vw;
   border-radius: 13px;
   background-color: #260038;
   align-self: center;
@@ -15,9 +14,6 @@ mat-expansion-panel {
       display: flex;
       justify-content: center;
     }
-  }
-  ::ng-deep .mat-expansion-panel-body {
-    padding: 0;
   }
   button {
     margin: 10px 0;

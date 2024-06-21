@@ -10,10 +10,6 @@ export class GuestNetworkComponent {
   allowAccess: string = "OFF";
   wireless24G: string = "OFF";
 
-  onCheck() {
-    console.log('AllowAccess: ' + this.allowAccess + '\nwireless24G: ' + this.wireless24G);
-  }
-
   onSubmit(form: NgForm) {
     console.log(form.value);
   }
