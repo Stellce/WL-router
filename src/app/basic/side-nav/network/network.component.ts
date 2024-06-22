@@ -1,11 +1,18 @@
 import {Component} from '@angular/core';
 import {wiredList, wirelessList} from "./clientsIP";
 import {ClientsIPInterface} from "./clientsIP-interface";
+import { MatDivider } from '@angular/material/divider';
+import { MatTable, MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatCellDef, MatCell, MatHeaderRowDef, MatHeaderRow, MatRowDef, MatRow } from '@angular/material/table';
+import { CdkDrag, CdkDragHandle } from '@angular/cdk/drag-drop';
+import { NgIf, NgFor } from '@angular/common';
+import { MatCard, MatCardContent } from '@angular/material/card';
 
 @Component({
-  selector: 'app-network',
-  templateUrl: './network.component.html',
-  styleUrls: ['./network.component.scss', '../../../shared/shared.scss']
+    selector: 'app-network',
+    templateUrl: './network.component.html',
+    styleUrls: ['./network.component.scss', '../../../shared/shared.scss'],
+    standalone: true,
+    imports: [MatCard, MatCardContent, NgIf, CdkDrag, CdkDragHandle, MatTable, MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatCellDef, MatCell, MatHeaderRowDef, MatHeaderRow, MatRowDef, MatRow, MatDivider, NgFor]
 })
 export class NetworkComponent {
   disconnected: boolean = true;

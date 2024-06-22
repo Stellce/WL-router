@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
-import {MatSelectChange} from "@angular/material/select";
-import {NgForm} from "@angular/forms";
+import { MatSelectChange, MatSelect, MatOption } from "@angular/material/select";
+import { NgForm, ReactiveFormsModule, FormsModule } from "@angular/forms";
 import {UserDataModel} from "./user-data.model";
+import { MatInput } from '@angular/material/input';
+import { MatCheckbox } from '@angular/material/checkbox';
+import { MatButton } from '@angular/material/button';
+import { NgFor, NgIf } from '@angular/common';
+import { MatFormField } from '@angular/material/form-field';
+import { MatCard, MatCardContent, MatCardActions } from '@angular/material/card';
 
 @Component({
-  selector: 'app-internet',
-  templateUrl: './internet.component.html',
-  styleUrls: ['./internet.component.scss', '../../../shared/shared.scss']
+    selector: 'app-internet',
+    templateUrl: './internet.component.html',
+    styleUrls: ['./internet.component.scss', '../../../shared/shared.scss'],
+    standalone: true,
+    imports: [MatCard, MatCardContent, MatFormField, MatSelect, NgFor, MatOption, MatCardActions, MatButton, ReactiveFormsModule, FormsModule, NgIf, MatCheckbox, MatInput]
 })
 export class InternetComponent {
   connectOptions = ['Dynamic IP', 'Static IP', 'PPPoE', 'BigPond Cable'];

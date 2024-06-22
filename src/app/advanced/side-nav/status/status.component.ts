@@ -1,9 +1,15 @@
 import {Component} from "@angular/core";
+import { MatButton } from "@angular/material/button";
+import { NgFor, NgIf } from "@angular/common";
+import { MatDivider } from "@angular/material/divider";
+import { MatCard } from "@angular/material/card";
 
 @Component({
-  selector: 'app-status',
-  templateUrl: 'status.component.html',
-  styleUrls: ['status.component.scss', '../../../shared/shared.scss']
+    selector: 'app-status',
+    templateUrl: 'status.component.html',
+    styleUrls: ['status.component.scss', '../../../shared/shared.scss'],
+    standalone: true,
+    imports: [MatCard, MatDivider, NgFor, NgIf, MatButton]
 })
 
 export class StatusComponent {

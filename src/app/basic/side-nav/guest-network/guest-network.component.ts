@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
-import {NgForm} from "@angular/forms";
+import { NgForm, ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { MatButton } from '@angular/material/button';
+import { MatButtonToggleGroup, MatButtonToggle } from '@angular/material/button-toggle';
+import { MatCard, MatCardContent, MatCardActions } from '@angular/material/card';
 
 @Component({
-  selector: 'app-guest-network',
-  templateUrl: './guest-network.component.html',
-  styleUrls: ['./guest-network.component.scss', '../../../shared/shared.scss']
+    selector: 'app-guest-network',
+    templateUrl: './guest-network.component.html',
+    styleUrls: ['./guest-network.component.scss', '../../../shared/shared.scss'],
+    standalone: true,
+    imports: [MatCard, ReactiveFormsModule, FormsModule, MatCardContent, MatButtonToggleGroup, MatButtonToggle, MatCardActions, MatButton]
 })
 export class GuestNetworkComponent {
   allowAccess: string = "OFF";

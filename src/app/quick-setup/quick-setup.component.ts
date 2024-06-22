@@ -1,12 +1,25 @@
 import {Component, HostListener, OnInit} from "@angular/core";
-import {FormBuilder, Validators} from "@angular/forms";
+import { FormBuilder, Validators, ReactiveFormsModule } from "@angular/forms";
 import timezones from '../../assets/json/timezones.json';
 import {map, Observable} from "rxjs";
+import { RouterLink } from "@angular/router";
+import { MatButtonToggleGroup, MatButtonToggle } from "@angular/material/button-toggle";
+import { MatRadioGroup, MatRadioButton } from "@angular/material/radio";
+import { MatButton } from "@angular/material/button";
+import { MatOption } from "@angular/material/core";
+import { NgFor, AsyncPipe } from "@angular/common";
+import { MatAutocompleteTrigger, MatAutocomplete } from "@angular/material/autocomplete";
+import { MatInput } from "@angular/material/input";
+import { MatFormField, MatLabel } from "@angular/material/form-field";
+import { MatStepper, MatStep, MatStepLabel, MatStepperNext, MatStepperPrevious } from "@angular/material/stepper";
+import { MatCard, MatCardContent } from "@angular/material/card";
 
 @Component({
-  selector: `app-quick-setup`,
-  templateUrl: `./quick-setup.component.html`,
-  styleUrls: [`../shared/shared.scss`, `./quick-setup.component.scss`]
+    selector: `app-quick-setup`,
+    templateUrl: `./quick-setup.component.html`,
+    styleUrls: [`../shared/shared.scss`, `./quick-setup.component.scss`],
+    standalone: true,
+    imports: [MatCard, MatCardContent, MatStepper, MatStep, ReactiveFormsModule, MatStepLabel, MatFormField, MatInput, MatAutocompleteTrigger, MatAutocomplete, NgFor, MatOption, MatButton, MatStepperNext, MatLabel, MatRadioGroup, MatRadioButton, MatStepperPrevious, MatButtonToggleGroup, MatButtonToggle, RouterLink, AsyncPipe]
 })
 export class QuickSetupComponent implements OnInit{
   isEditable: boolean = true;
