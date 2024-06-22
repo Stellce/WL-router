@@ -1,11 +1,7 @@
 # WL-router
 
-This project was created with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+web application for managing a router
 
-## Development server
+Functionalities: Management panel, Interactive Device List, Step-by-Step Configuration, Services-Driven Approach.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Link: https://wl-router.web.app
