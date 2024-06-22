@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {AppService} from "../app.service";
 import {LogCircleComponent} from "./log-circle/log-circle.component";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
@@ -22,7 +22,8 @@ import {MatIcon} from "@angular/material/icon";
     MatMenuTrigger,
     MatIcon
   ],
-  standalone: true
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
   constructor(private appService: AppService, private _bottomSheet: MatBottomSheet) {}

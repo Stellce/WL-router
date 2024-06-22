@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {FormsModule, NgForm} from "@angular/forms";
 import {AppService} from "../app.service";
 import {MatCard, MatCardActions} from "@angular/material/card";
@@ -19,7 +19,8 @@ import {MatButton} from "@angular/material/button";
     MatCardActions,
     MatButton
   ],
-  standalone: true
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent {
   constructor(private appService: AppService) {}

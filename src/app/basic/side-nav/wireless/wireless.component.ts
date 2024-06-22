@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { NgForm, ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { MatButton } from '@angular/material/button';
 import { MatCheckbox } from '@angular/material/checkbox';
@@ -12,7 +12,8 @@ import { MatCard, MatCardContent, MatCardActions } from '@angular/material/card'
     templateUrl: './wireless.component.html',
     styleUrls: ['./wireless.component.scss', '../../../shared/shared.scss'],
     standalone: true,
-    imports: [MatCard, ReactiveFormsModule, FormsModule, MatCardContent, MatButtonToggleGroup, MatButtonToggle, MatFormField, MatInput, MatCheckbox, MatCardActions, MatButton]
+    imports: [MatCard, ReactiveFormsModule, FormsModule, MatCardContent, MatButtonToggleGroup, MatButtonToggle, MatFormField, MatInput, MatCheckbox, MatCardActions, MatButton],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WirelessComponent {
   wireless: string = "ON";

@@ -30,11 +30,11 @@ body {
 .mat-mdc-menu-panel.mat-mdc-menu-panel {
   padding: 0;
   background: #2d0046;
-  button {
-    max-width: 100px;
-  }
   .mat-mdc-menu-content {
     display: flex;
     flex-direction: column;
+    button {
+      width: 150px !important;
+    }
   }
 }

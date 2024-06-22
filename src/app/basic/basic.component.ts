@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import { MatButton } from "@angular/material/button";
 
@@ -8,6 +8,7 @@ import { MatButton } from "@angular/material/button";
     styleUrls: [`./basic.component.scss`, `../shared/shared.scss`],
     standalone: true,
     imports: [MatButton, RouterLink, RouterLinkActive, RouterOutlet],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BasicComponent{
 

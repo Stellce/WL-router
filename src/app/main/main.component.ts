@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {ActivatedRoute, RouterOutlet} from "@angular/router";
 import {HeaderComponent} from "../header/header.component";
 
@@ -10,7 +10,8 @@ import {HeaderComponent} from "../header/header.component";
     HeaderComponent,
     RouterOutlet
   ],
-  standalone: true
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainComponent implements OnInit{
   constructor(private route: ActivatedRoute) {}

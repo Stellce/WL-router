@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { MatSelectChange, MatSelect, MatOption } from "@angular/material/select";
 import { NgForm, ReactiveFormsModule, FormsModule } from "@angular/forms";
 import {UserDataModel} from "./user-data.model";
@@ -14,7 +14,8 @@ import { MatCard, MatCardContent, MatCardActions } from '@angular/material/card'
     templateUrl: './internet.component.html',
     styleUrls: ['./internet.component.scss', '../../../shared/shared.scss'],
     standalone: true,
-    imports: [MatCard, MatCardContent, MatFormField, MatSelect, NgFor, MatOption, MatCardActions, MatButton, ReactiveFormsModule, FormsModule, NgIf, MatCheckbox, MatInput]
+    imports: [MatCard, MatCardContent, MatFormField, MatSelect, NgFor, MatOption, MatCardActions, MatButton, ReactiveFormsModule, FormsModule, NgIf, MatCheckbox, MatInput],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InternetComponent {
   connectOptions = ['Dynamic IP', 'Static IP', 'PPPoE', 'BigPond Cable'];

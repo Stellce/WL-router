@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from "@angular/core";
+import {ChangeDetectionStrategy, Component, HostListener, OnInit} from "@angular/core";
 import { FormBuilder, Validators, ReactiveFormsModule } from "@angular/forms";
 import timezones from '../../assets/json/timezones.json';
 import {map, Observable} from "rxjs";
@@ -19,7 +19,8 @@ import { MatCard, MatCardContent } from "@angular/material/card";
     templateUrl: `./quick-setup.component.html`,
     styleUrls: [`../shared/shared.scss`, `./quick-setup.component.scss`],
     standalone: true,
-    imports: [MatCard, MatCardContent, MatStepper, MatStep, ReactiveFormsModule, MatStepLabel, MatFormField, MatInput, MatAutocompleteTrigger, MatAutocomplete, NgFor, MatOption, MatButton, MatStepperNext, MatLabel, MatRadioGroup, MatRadioButton, MatStepperPrevious, MatButtonToggleGroup, MatButtonToggle, RouterLink, AsyncPipe]
+    imports: [MatCard, MatCardContent, MatStepper, MatStep, ReactiveFormsModule, MatStepLabel, MatFormField, MatInput, MatAutocompleteTrigger, MatAutocomplete, NgFor, MatOption, MatButton, MatStepperNext, MatLabel, MatRadioGroup, MatRadioButton, MatStepperPrevious, MatButtonToggleGroup, MatButtonToggle, RouterLink, AsyncPipe],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuickSetupComponent implements OnInit{
   isEditable: boolean = true;

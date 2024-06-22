@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {ChangeDetectionStrategy, Component} from "@angular/core";
 import { MatButton } from "@angular/material/button";
 import { NgFor, NgIf } from "@angular/common";
 import { MatDivider } from "@angular/material/divider";
@@ -9,7 +9,8 @@ import { MatCard } from "@angular/material/card";
     templateUrl: 'status.component.html',
     styleUrls: ['status.component.scss', '../../../shared/shared.scss'],
     standalone: true,
-    imports: [MatCard, MatDivider, NgFor, NgIf, MatButton]
+    imports: [MatCard, MatDivider, NgFor, NgIf, MatButton],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class StatusComponent {

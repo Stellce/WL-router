@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {wiredList, wirelessList} from "./clientsIP";
 import {ClientsIPInterface} from "./clientsIP-interface";
 import { MatDivider } from '@angular/material/divider';
@@ -12,7 +12,8 @@ import { MatCard, MatCardContent } from '@angular/material/card';
     templateUrl: './network.component.html',
     styleUrls: ['./network.component.scss', '../../../shared/shared.scss'],
     standalone: true,
-    imports: [MatCard, MatCardContent, NgIf, CdkDrag, CdkDragHandle, MatTable, MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatCellDef, MatCell, MatHeaderRowDef, MatHeaderRow, MatRowDef, MatRow, MatDivider, NgFor]
+    imports: [MatCard, MatCardContent, NgIf, CdkDrag, CdkDragHandle, MatTable, MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatCellDef, MatCell, MatHeaderRowDef, MatHeaderRow, MatRowDef, MatRow, MatDivider, NgFor],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NetworkComponent {
   disconnected: boolean = true;

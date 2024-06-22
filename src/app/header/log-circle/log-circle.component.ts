@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {AppService} from "../../app.service";
 import {MatBottomSheetRef} from "@angular/material/bottom-sheet";
 import {MatButton} from "@angular/material/button";
@@ -10,7 +10,8 @@ import {MatButton} from "@angular/material/button";
   imports: [
     MatButton
   ],
-  standalone: true
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LogCircleComponent {
   constructor(private appService: AppService, private sheet: MatBottomSheetRef<LogCircleComponent>) {}

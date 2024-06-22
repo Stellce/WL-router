@@ -1,21 +1,22 @@
-import { Component } from '@angular/core';
-import { NgForm, ReactiveFormsModule, FormsModule } from "@angular/forms";
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {FormsModule, NgForm, ReactiveFormsModule} from "@angular/forms";
 import {UserDataModel} from "../../../../basic/side-nav/internet/user-data.model";
-import { MatSelectChange, MatSelect } from "@angular/material/select";
-import { MatInput } from '@angular/material/input';
-import { MatCheckbox } from '@angular/material/checkbox';
-import { MatButton } from '@angular/material/button';
-import { MatOption } from '@angular/material/core';
-import { NgFor, NgIf } from '@angular/common';
-import { MatFormField } from '@angular/material/form-field';
-import { MatCard, MatCardContent, MatCardActions } from '@angular/material/card';
+import {MatSelect, MatSelectChange} from "@angular/material/select";
+import {MatInput} from '@angular/material/input';
+import {MatCheckbox} from '@angular/material/checkbox';
+import {MatButton} from '@angular/material/button';
+import {MatOption} from '@angular/material/core';
+import {NgFor, NgIf} from '@angular/common';
+import {MatFormField} from '@angular/material/form-field';
+import {MatCard, MatCardActions, MatCardContent} from '@angular/material/card';
 
 @Component({
     selector: 'app-wireless',
     templateUrl: './wan.component.html',
     styleUrls: ['./wan.component.scss'],
     standalone: true,
-    imports: [MatCard, MatCardContent, MatFormField, MatSelect, NgFor, MatOption, MatButton, ReactiveFormsModule, FormsModule, NgIf, MatCardActions, MatCheckbox, MatInput]
+    imports: [MatCard, MatCardContent, MatFormField, MatSelect, NgFor, MatOption, MatButton, ReactiveFormsModule, FormsModule, NgIf, MatCardActions, MatCheckbox, MatInput],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WanComponent {
   connectOptions = ['Dynamic IP', 'Static IP', 'PPPoE', 'BigPond Cable'];
